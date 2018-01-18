@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smarket.API", "Smarket.API\Smarket.API.csproj", "{2F82BAD0-5C20-430F-AEDF-E9A371500278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smarket.API.Service", "Smarket.API.Service\Smarket.API.Service.csproj", "{91AA10C5-8EA9-4339-ABA3-8886FCEDE674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smarket.API.Resources", "Smarket.API.Resources\Smarket.API.Resources.csproj", "{0AA5F545-735C-452B-84A7-DE4332DE1578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smarket.API.Model", "Smarket.API.Model\Smarket.API.Model.csproj", "{EE993988-07A0-47D5-B86F-5B29D14B993A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smarket.API.Infrastructure", "Smarket.API.Infrastructure\Smarket.API.Infrastructure.csproj", "{0966B017-709E-4754-A0AA-AF265F63D778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smarket.API.Domain", "Smarket.API.Domain\Smarket.API.Domain.csproj", "{2F708849-98C6-4CBC-AF12-1FFF4666EE40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F82BAD0-5C20-430F-AEDF-E9A371500278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F82BAD0-5C20-430F-AEDF-E9A371500278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F82BAD0-5C20-430F-AEDF-E9A371500278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F82BAD0-5C20-430F-AEDF-E9A371500278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AA10C5-8EA9-4339-ABA3-8886FCEDE674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AA10C5-8EA9-4339-ABA3-8886FCEDE674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AA10C5-8EA9-4339-ABA3-8886FCEDE674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AA10C5-8EA9-4339-ABA3-8886FCEDE674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AA5F545-735C-452B-84A7-DE4332DE1578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA5F545-735C-452B-84A7-DE4332DE1578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA5F545-735C-452B-84A7-DE4332DE1578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA5F545-735C-452B-84A7-DE4332DE1578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE993988-07A0-47D5-B86F-5B29D14B993A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE993988-07A0-47D5-B86F-5B29D14B993A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE993988-07A0-47D5-B86F-5B29D14B993A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE993988-07A0-47D5-B86F-5B29D14B993A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0966B017-709E-4754-A0AA-AF265F63D778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0966B017-709E-4754-A0AA-AF265F63D778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0966B017-709E-4754-A0AA-AF265F63D778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0966B017-709E-4754-A0AA-AF265F63D778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F708849-98C6-4CBC-AF12-1FFF4666EE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F708849-98C6-4CBC-AF12-1FFF4666EE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F708849-98C6-4CBC-AF12-1FFF4666EE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F708849-98C6-4CBC-AF12-1FFF4666EE40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79E5EDF6-7B45-4182-970A-2BE567E48127}
+	EndGlobalSection
+EndGlobal
