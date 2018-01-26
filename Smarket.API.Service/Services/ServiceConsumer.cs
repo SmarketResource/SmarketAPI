@@ -54,6 +54,8 @@ namespace Smarket.API.Service.Services
                 transaction.Complete();
             }
 
+            returnModel.Message = GeneralMessages.SaveConsumerSuccess;
+
 
             return returnModel;
         }

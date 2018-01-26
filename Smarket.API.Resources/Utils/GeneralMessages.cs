@@ -48,6 +48,11 @@ namespace Smarket.API.Resources.Utils
             get { return "SaveConsumer : Error"; }
         }
 
+        public static string SaveConsumerSuccess
+        {
+            get { return "SaveConsumer : Success"; }
+        }
+
         public static string SavePhoneSuccess
         {
             get { return "SavePhone : Success"; }
