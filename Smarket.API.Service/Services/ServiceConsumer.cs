@@ -49,7 +49,7 @@ namespace Smarket.API.Service.Services
                 _repositoryUser.AddUser(consumer.Users);
 
                 _repositoryPhone.AddPhone(consumer.Phones.FirstOrDefault());
-                _repositoryPhone.SaveChanges();
+                _repositoryConsumer.SaveChanges();
 
                 transaction.Complete();
             }
