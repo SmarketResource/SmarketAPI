@@ -1,4 +1,5 @@
-﻿using Smarket.API.Domain.Interfaces.IContext;
+﻿using AutoMapper;
+using Smarket.API.Domain.Interfaces.IContext;
 using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Context;
@@ -27,17 +28,9 @@ namespace Smarket.API.Infrastructure.Repositories
 
         public UserReturn GetUsers()
         {
-            var returnModel = new UserReturn
-            {
-                Users = _context.Users.Select(u => new UserModel
-                {
-                    UserId          = u.UserId,
-                    TypeUserId      = u.TypeUserId,
-                    UserLogin       = u.UserLogin,
-                    UserPass        = u.UserPass,
-                    UserLastAccess  = u.UserLastAccess
-                }).ToList()
-            };
+            var users = _context.Users.Select(s => s).ToList();
+
+            var returnModel = new UserReturn{ Users = Mapper.Map<List<Users>, List<UserModel>>(users) };
 
             return returnModel;
         }

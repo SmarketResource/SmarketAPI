@@ -1,51 +1,41 @@
 using Smarket.API.Domain.Interfaces.IContext;
-
 namespace Smarket.API.Model.Context
 {
+    using Smarket.API.Model.EntityConfig;
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 
     public partial class SmarketContext : DbContext, IDbContext
     {
         public SmarketContext()
             : base("name=SmarketContext")
         {
+            Database.SetInitializer<SmarketContext>(null);
+
         }
 
-        public virtual DbSet<Consumers> Consumers   { get; set; }
-        public virtual DbSet<Logs>      Logs        { get; set; }
-        public virtual DbSet<Phones>    Phones      { get; set; }
-        public virtual DbSet<TypePhone> TypePhone   { get; set; }
-        public virtual DbSet<TypeUsers> TypeUsers   { get; set; }
-        public virtual DbSet<Users>     Users       { get; set; }
+        public virtual IDbSet<Consumers> Consumers   { get; set; }
+        public virtual IDbSet<Logs>      Logs        { get; set; }
+        public virtual IDbSet<Phones>    Phones      { get; set; }
+        public virtual IDbSet<TypePhone> TypePhone   { get; set; }
+        public virtual IDbSet<TypeUsers> TypeUsers   { get; set; }
+        public virtual IDbSet<Users>     Users       { get; set; }
+        //public virtual DbSet<ConsumersPhones> ConsumersPhones { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Consumers>()
-                .Property(e => e.Avatar)
-                .IsUnicode(false);
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Entity<Consumers>()
-                .HasMany(e => e.Phones)
-                .WithMany(e => e.Consumers)
-                .Map(m => m.ToTable("ConsumersPhones").MapLeftKey("UserId").MapRightKey("PhoneId"));
+            modelBuilder.Properties<string>().Configure(el => el.HasColumnType("varchar"));
+            modelBuilder.Properties<string>().Configure(el => el.HasMaxLength(255));
 
-            modelBuilder.Entity<Logs>()
-                .Property(e => e.Message)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TypePhone>()
-                .HasMany(e => e.Phones)
-                .WithRequired(e => e.TypePhone)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<TypeUsers>()
-                .HasMany(e => e.Users)
-                .WithRequired(e => e.TypeUsers)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Users>()
-                .HasOptional(e => e.Consumers)
-                .WithRequired(e => e.Users);
+            modelBuilder.Configurations.Add(new UsersConfig());
+            modelBuilder.Configurations.Add(new TypeUsersConfig());
+            modelBuilder.Configurations.Add(new LogsConfig());
+            modelBuilder.Configurations.Add(new PhonesConfig());
+            modelBuilder.Configurations.Add(new TypePhoneConfig());
+            modelBuilder.Configurations.Add(new ConsumersConfig());
         }
     }
 }

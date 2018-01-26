@@ -12,6 +12,7 @@ namespace Smarket.API.Model.Returns
         {
             Error = false;
         }
+
         public bool Error { get; set; }
         public string Message { get; set; }
     }

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -39,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,12 +53,15 @@
   <ItemGroup>
     <Compile Include="Interfaces\IRepositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumer.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryConsumersPhones.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryLog.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryPhone.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryUser.cs" />
     <Compile Include="Interfaces\IServices\IServiceBase.cs" />
     <Compile Include="Interfaces\IServices\IServiceConsumer.cs" />
     <Compile Include="Interfaces\IServices\IServiceLog.cs" />
     <Compile Include="Interfaces\IServices\IServiceLogin.cs" />
+    <Compile Include="Interfaces\IServices\IServicePhone.cs" />
     <Compile Include="Interfaces\IServices\IServiceUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

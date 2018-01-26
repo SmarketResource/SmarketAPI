@@ -5,6 +5,8 @@ using Smarket.API.Model.Returns;
 using Smarket.API.Domain.Interfaces.IContext;
 using System.Linq;
 using Smarket.API.Model.CommomModels;
+using AutoMapper;
+using System.Collections.Generic;
 
 namespace Smarket.API.Infrastructure.Repositories
 {
@@ -26,16 +28,10 @@ namespace Smarket.API.Infrastructure.Repositories
 
         public ConsumerReturn GetConsumers()
         {
-            var returnModel = new ConsumerReturn
-            {
-                Consumers = _context.Consumers.Select(c => new ConsumerModel
-                {
-                    UserId      = c.UserId,
-                    Name        = c.Name,
-                    LastName    = c.LastName,
-                    Avatar      = c.Avatar
-                }).ToList()
-            };
+
+            var consumers = _context.Consumers.Select(c => c).ToList();
+
+            var returnModel = new ConsumerReturn{ Consumers = Mapper.Map<List<Consumers>, List<ConsumerModel>>(consumers) };
 
             return returnModel;
         }

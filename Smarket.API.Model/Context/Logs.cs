@@ -6,6 +6,7 @@ namespace Smarket.API.Model.Context
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("Logs")]
     public partial class Logs : EntityBase
     {
         [Key]

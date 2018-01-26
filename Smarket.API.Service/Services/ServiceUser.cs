@@ -1,12 +1,9 @@
 ﻿using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Domain.Interfaces.IServices;
-using Smarket.API.Model.Commands;
-using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
-using System.Linq;
 using System.Transactions;
 
 namespace Smarket.API.Service.Services
@@ -30,21 +27,18 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public BaseReturn SaveUser(SaveUserCommand command)
+        public BaseReturn SaveUser(Users newUser)
         {
             var returnModel = new BaseReturn();
 
-            try
+            var userExists = _repositoryUser.Get(u => u.UserLogin == newUser.UserLogin);
+
+            if (userExists == null)
             {
-                using(var transaction = new TransactionScope())
+                using (var transaction = new TransactionScope())
                 {
-                    _repositoryUser.AddUser(new Users
-                    {
-                        UserId      = Guid.NewGuid(),
-                        TypeUserId  = command.TypeUserId,
-                        UserLogin   = command.UserLogin,
-                        UserPass    = command.UserPass
-                    });
+
+                    _repositoryUser.AddUser(newUser);
 
                     _repositoryUser.SaveChanges();
 
@@ -53,18 +47,12 @@ namespace Smarket.API.Service.Services
 
                 returnModel.Message = GeneralMessages.SaveUserSuccess;
             }
-            catch(TransactionAbortedException tex)
+            else
             {
                 returnModel.Error = true;
-                returnModel.Message = GeneralMessages.SaveUserError + " : " + tex.Message;
-                //ServiceLog.SaveLog(returnModel.Message);
+                returnModel.Message = GeneralMessages.SaveUserAlreadyExists;
             }
-            catch(Exception ex)
-            {
-                returnModel.Error = true;
-                returnModel.Message = GeneralMessages.SaveUserError + " : " + ex.Message;
-                //ServiceLog.SaveLog(returnModel.Message);
-            }
+
 
             return returnModel;
         }

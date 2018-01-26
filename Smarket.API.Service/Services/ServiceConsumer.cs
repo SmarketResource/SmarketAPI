@@ -16,11 +16,13 @@ namespace Smarket.API.Service.Services
 
         private readonly IRepositoryConsumer _repositoryConsumer;
         private readonly IRepositoryUser _repositoryUser;
+        private readonly IRepositoryPhone _repositoryPhone;
 
-        public ServiceConsumer(IRepositoryConsumer repositoryConsumer,IRepositoryUser repositoryUser)
+        public ServiceConsumer(IRepositoryConsumer repositoryConsumer,IRepositoryUser repositoryUser, IRepositoryPhone repositoryPhone)
         {
             _repositoryConsumer = repositoryConsumer;
             _repositoryUser = repositoryUser;
+            _repositoryPhone = repositoryPhone;
         }   
 
         public ConsumerReturn GetConsumers()
@@ -32,38 +34,26 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public BaseReturn SaveConsumer(SaveConsumerCommand command)
+        public BaseReturn SaveConsumer(Consumers consumer)
         {
             var returnModel = new BaseReturn();
 
-            try
-            {
-                using(var transaction = new TransactionScope())
-                {
 
-                    _repositoryUser.AddUser(new Users
-                    {
-                        UserId      = Guid.NewGuid(),
-                        TypeUserId  = 2,
-                        UserLogin   = command.UserLogin,
-                        UserPass    = command.UserPass
-                    });
+            consumer.Users.TypeUserId   = 2;
 
+            using(var transaction = new TransactionScope())
+            {
+                _repositoryConsumer.AddConsumer(consumer);
+                _repositoryConsumer.SaveChanges();
 
-                }
+                _repositoryUser.AddUser(consumer.Users);
+
+                _repositoryPhone.AddPhone(consumer.Phones.FirstOrDefault());
+                _repositoryPhone.SaveChanges();
+
+                transaction.Complete();
             }
-            catch(TransactionAbortedException tex)
-            {
-                returnModel.Error = true;
-                returnModel.Message = GeneralMessages.SaveConsumerError + " : " + tex.Message;
-                //ServiceLog.SaveLog(returnModel.Message);
-            }
-            catch(Exception ex)
-            {
-                returnModel.Error = true;
-                returnModel.Message = GeneralMessages.SaveConsumerError + " : " + ex.Message;
-                //ServiceLog.SaveLog(returnModel.Message);
-            }
+
 
             return returnModel;
         }

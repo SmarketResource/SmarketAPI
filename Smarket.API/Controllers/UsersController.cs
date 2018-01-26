@@ -1,4 +1,7 @@
-﻿using Smarket.API.Domain.Interfaces.IServices;
+﻿using AutoMapper;
+using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Model.Commands;
+using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
@@ -38,5 +41,26 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
+        [HttpPost]
+        public IHttpActionResult SaveUser(SaveUserCommand command)
+        {
+            var returnModel = new BaseReturn();
+
+            try
+            {
+                var user = Mapper.Map<SaveUserCommand, Users>(command);
+
+                returnModel = _serviceUser.SaveUser(user);
+
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessages.SaveUserError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+            }
+
+            return Ok(returnModel);
+        }
     }
 }

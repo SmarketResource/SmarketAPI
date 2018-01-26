@@ -3,10 +3,9 @@ using Smarket.API.Model.Returns;
 
 namespace Smarket.API.Domain.Interfaces.IServices
 {
-    public interface IServiceConsumer
+    public interface IServicePhone
     {
-        ConsumerReturn GetConsumers();
+        BaseReturn SavePhone(Phones phone);
 
-        BaseReturn SaveConsumer(Consumers consumer);
     }
 }

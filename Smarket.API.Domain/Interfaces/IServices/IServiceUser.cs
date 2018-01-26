@@ -1,4 +1,5 @@
 ﻿using Smarket.API.Model.Commands;
+using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 
 namespace Smarket.API.Domain.Interfaces.IServices
@@ -7,6 +8,6 @@ namespace Smarket.API.Domain.Interfaces.IServices
     {
         UserReturn GetUsers();
 
-        BaseReturn SaveUser(SaveUserCommand command);
+        BaseReturn SaveUser(Users newUser);
     }
 }

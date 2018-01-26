@@ -1,12 +1,12 @@
-﻿using Smarket.API.Domain.Interfaces.IServices;
+﻿using System;
+using System.Web.Http;
+using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Model.Commands;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
-using Smarket.API.Service.Services;
-using System;
+using AutoMapper;
+using Smarket.API.Model.Context;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
 
 namespace Smarket.API.Controllers
 {
@@ -36,13 +36,41 @@ namespace Smarket.API.Controllers
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.GetConsumersError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
+
+                return Ok(returnModel);
+
             }
 
             return Ok(returnModel);
         }
 
-        //[HttpPost]
-        //public IHttpActionResult SaveConsumer()
+        [HttpPost]
+        public IHttpActionResult SaveConsumer(SaveConsumerCommand command)
+        {
+            var returnModel = new BaseReturn();
+            try
+            {
+                var phone    = Mapper.Map<SaveConsumerCommand, Phones>(command);
+                var user     = Mapper.Map<SaveConsumerCommand, Users>(command);
+                var consumer = Mapper.Map<SaveConsumerCommand, Consumers>(command);
+
+                var phones = new List<Phones>{ phone };
+
+                consumer.Phones = phones;
+                consumer.Users = user;
+
+                returnModel = _serviceConsumer.SaveConsumer(consumer);
+
+            }
+            catch(Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessages.SaveConsumerError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+            }
+
+            return Ok(returnModel);
+        }
 
     }
 }

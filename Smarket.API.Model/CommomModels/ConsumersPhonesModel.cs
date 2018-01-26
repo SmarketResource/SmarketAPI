@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Smarket.API.Model.CommomModels
 {
-    public class TypePhone
+    public class ConsumersPhonesModel
     {
-        public int      TypePhoneId { get; set; }
+        public Guid UserId  { get; set; }
 
-        public string   Description { get; set; }
-
+        public Guid PhoneId { get; set; }
     }
 }

@@ -19,7 +19,6 @@ namespace Smarket.API.Service.Services
 
             _repositoryLog.Add(new Logs
             {
-                LogId = Guid.NewGuid(),
                 Message = message,
                 LogDate = DateTime.Now
             });

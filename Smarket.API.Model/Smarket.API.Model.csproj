@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,11 +57,12 @@
     <Compile Include="Commands\SavePhoneCommand.cs" />
     <Compile Include="Commands\SaveUserCommand.cs" />
     <Compile Include="CommomModels\ConsumerModel.cs" />
-    <Compile Include="CommomModels\ConsumersPhones.cs" />
+    <Compile Include="CommomModels\ConsumersPhonesModel.cs" />
     <Compile Include="CommomModels\PhoneModel.cs" />
-    <Compile Include="CommomModels\TypePhone.cs" />
+    <Compile Include="CommomModels\TypePhoneModel.cs" />
     <Compile Include="CommomModels\UserModel.cs" />
     <Compile Include="Context\Consumers.cs" />
+    <Compile Include="Context\ConsumersPhones.cs" />
     <Compile Include="Context\EntityBase.cs" />
     <Compile Include="Context\Logs.cs" />
     <Compile Include="Context\Phones.cs" />
@@ -66,6 +70,12 @@
     <Compile Include="Context\TypePhone.cs" />
     <Compile Include="Context\TypeUsers.cs" />
     <Compile Include="Context\Users.cs" />
+    <Compile Include="EntityConfig\ConsumersConfig.cs" />
+    <Compile Include="EntityConfig\LogsConfig.cs" />
+    <Compile Include="EntityConfig\PhonesConfig.cs" />
+    <Compile Include="EntityConfig\TypePhoneConfig.cs" />
+    <Compile Include="EntityConfig\TypeUsersConfig.cs" />
+    <Compile Include="EntityConfig\UsersConfig.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Returns\BaseReturn.cs" />

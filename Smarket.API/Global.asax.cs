@@ -1,4 +1,5 @@
 ﻿using Smarket.API.App_Start;
+using Smarket.API.AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Smarket.API
         protected void Application_Start()
         {
             UnityConfig.RegisterComponents();
+            AutoMapperConfig.RegisterMappings();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
 

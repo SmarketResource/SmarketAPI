@@ -16,7 +16,7 @@ namespace Smarket.API.Model.Commands
 
         public string   LastName    { get; set; }
 
-        public int      TypePhone   { get; set; }
+        public int      TypePhoneId { get; set; }
 
         public string   AreaCode    { get; set; }
 

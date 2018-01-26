@@ -28,6 +28,11 @@ namespace Smarket.API.Resources.Utils
             get { return "SaveUser : Error"; }
         }
 
+        public static string SaveUserAlreadyExists
+        {
+            get { return "SaveUser : User already exists!"; }
+        }
+
         public static string GetConsumersSuccess
         {
             get { return "GetConsumers : Success"; }

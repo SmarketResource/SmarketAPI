@@ -1,11 +1,10 @@
 namespace Smarket.API.Model.Context
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
+    [Table("Users")]
     public partial class Users : EntityBase
     {
         [Key]
@@ -22,8 +21,6 @@ namespace Smarket.API.Model.Context
         public string UserPass { get; set; }
 
         public DateTime? UserLastAccess { get; set; }
-
-        public virtual Consumers Consumers { get; set; }
 
         public virtual TypeUsers TypeUsers { get; set; }
     }
