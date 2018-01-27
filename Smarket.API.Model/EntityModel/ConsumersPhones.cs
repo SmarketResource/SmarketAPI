@@ -11,10 +11,10 @@ namespace Smarket.API.Model.Context
     [Table("ConsumersPhones")]
     public class ConsumersPhones : EntityBase
     {
-        //[Column(Order = 1), Key, ForeignKey("UserId")]
-        //public Guid UserId { get; set; }
+        [Column(Order = 1), Key, ForeignKey("UserId")]
+        public Guid UserId { get; set; }
 
-        //[Column(Order = 2), Key, ForeignKey("PhoneId")]
-        //public Guid PhoneId { get; set; }
+        [Column(Order = 2), Key, ForeignKey("PhoneId")]
+        public Guid PhoneId { get; set; }
     }
 }

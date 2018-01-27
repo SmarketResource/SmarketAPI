@@ -14,13 +14,17 @@ namespace Smarket.API.Model.Context
 
         }
 
-        public virtual IDbSet<Consumers> Consumers   { get; set; }
-        public virtual IDbSet<Logs>      Logs        { get; set; }
-        public virtual IDbSet<Phones>    Phones      { get; set; }
-        public virtual IDbSet<TypePhone> TypePhone   { get; set; }
-        public virtual IDbSet<TypeUsers> TypeUsers   { get; set; }
-        public virtual IDbSet<Users>     Users       { get; set; }
-        //public virtual DbSet<ConsumersPhones> ConsumersPhones { get; set; }
+        public virtual IDbSet<EmployeeRole>             EmployeeRole            { get; set; }
+        public virtual IDbSet<Employee>                 Employee                { get; set; }
+        public virtual IDbSet<Commerce>                 Commerce                { get; set; }
+        public virtual IDbSet<Consumers>                Consumers               { get; set; }
+        public virtual IDbSet<Logs>                     Logs                    { get; set; }
+        public virtual IDbSet<Phones>                   Phones                  { get; set; }
+        public virtual IDbSet<TypePhone>                TypePhone               { get; set; }
+        public virtual IDbSet<TypeUsers>                TypeUsers               { get; set; }
+        public virtual IDbSet<Users>                    Users                   { get; set; }
+        public virtual IDbSet<ConsumersPhones>          ConsumersPhones         { get; set; }
+        public virtual IDbSet<CommerceEmployeePhones>   CommerceEmployeePhones  { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -36,6 +40,10 @@ namespace Smarket.API.Model.Context
             modelBuilder.Configurations.Add(new PhonesConfig());
             modelBuilder.Configurations.Add(new TypePhoneConfig());
             modelBuilder.Configurations.Add(new ConsumersConfig());
+            modelBuilder.Configurations.Add(new CommerceConfig());
+            modelBuilder.Configurations.Add(new EmployeeConfig());
+            modelBuilder.Configurations.Add(new EmployeeRoleConfig());
+
         }
     }
 }

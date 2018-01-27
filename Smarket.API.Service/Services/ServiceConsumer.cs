@@ -1,8 +1,5 @@
-﻿using System;
-using System.Transactions;
+﻿using System.Transactions;
 using System.Linq;
-using Smarket.API.Model.Commands;
-using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using Smarket.API.Model.Context;
