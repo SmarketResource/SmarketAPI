@@ -1,10 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using AutoMapper;
+using Newtonsoft.Json;
 using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Smarket.API.Service.Services
@@ -56,11 +59,17 @@ namespace Smarket.API.Service.Services
 
                 };
             }
-            return new UserReturn()
-            {
-                Error = false,
-                Message = "Usuario Autenticado com sucesso"
-            };
+
+            user.UserLastAccess = DateTime.Now;
+
+            _repositoryUser.SaveChanges();
+
+            var returnModel = new UserReturn();
+            returnModel.Users.Add(Mapper.Map<Users, UserModel>(user));
+            returnModel.Message = "Usuario Autenticado com sucesso";
+            returnModel.Error = false;
+
+            return returnModel;
         }
 
     }
