@@ -60,7 +60,7 @@ namespace Smarket.API.Controllers
                 consumer.Users = user;
 
                 returnModel = _serviceConsumer.SaveConsumer(consumer);
-
+                returnModel.Message = GeneralMessages.SaveCommerceSuccess;
             }
             catch(Exception ex)
             {

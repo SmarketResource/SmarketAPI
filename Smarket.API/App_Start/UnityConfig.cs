@@ -32,6 +32,7 @@ namespace Smarket.API.App_Start
             container.RegisterType<IRepositoryPhone,            RepositoryPhone>();
             container.RegisterType<IRepositoryConsumersPhones,  RepositoryConsumersPhones>();
             container.RegisterType<IRepositoryCommerce,         RepositoryCommerce>();
+
             //Services
             container.RegisterType<IServiceBase<EntityBase>,    ServiceBase<EntityBase>>();
             container.RegisterType<IServiceUser,                ServiceUser>();

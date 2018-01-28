@@ -8,5 +8,6 @@ namespace Smarket.API.Domain.Interfaces.IRepositories
 
         CommerceReturn GetCommerces();
 
+        Commerce AddCommerce(Commerce commerce);
     }
 }

@@ -12,7 +12,7 @@ namespace Smarket.API.Model.EntityConfig
             Property(x => x.Name).IsRequired();
             Property(x => x.LastName).IsRequired();
             Property(x => x.RoleId).IsRequired();
-            
+            HasRequired(x => x.Users).WithRequiredDependent();
             HasMany(x => x.Phones).WithMany(x => x.Employee).Map(ap =>
             {
                 ap.MapLeftKey("UserId");
@@ -20,7 +20,6 @@ namespace Smarket.API.Model.EntityConfig
                 ap.ToTable("CommerceEmployeePhones");
             });
 
-            HasRequired(x => x.Users).WithRequiredDependent();
             //HasRequired(x => x.Commerce).WithRequiredPrincipal();
         }
 

@@ -7,7 +7,6 @@ using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Smarket.API.Service.Services

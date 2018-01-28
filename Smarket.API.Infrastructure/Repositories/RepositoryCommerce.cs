@@ -23,13 +23,18 @@ namespace Smarket.API.Infrastructure.Repositories
 
         public CommerceReturn GetCommerces()
         {
-            //var commerce = _context.Commerce.Select(c => c).ToList();
+            var commerce = _context.Commerce.Select(c => c).ToList();
 
-            //var returnModel = new CommerceReturn { Commerces = Mapper.Map<List<Commerce>, List<CommerceModel>>(commerce) };
+            var returnModel = new CommerceReturn { Commerces = Mapper.Map<List<Commerce>, List<CommerceModel>>(commerce) };
 
-            //return returnModel;
+            return returnModel;
+        }
 
-            return null;
+        public Commerce AddCommerce(Commerce commerce)
+        {
+            _context.Commerce.Add(commerce);
+
+            return commerce;
         }
     }
 }

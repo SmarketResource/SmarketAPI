@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AuthUserCommand.cs" />
+    <Compile Include="Commands\SaveCommerceCommand.cs" />
     <Compile Include="Commands\SaveConsumerCommand.cs" />
     <Compile Include="Commands\SavePhoneCommand.cs" />
     <Compile Include="Commands\SaveUserCommand.cs" />
