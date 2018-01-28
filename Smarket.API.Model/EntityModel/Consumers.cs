@@ -28,6 +28,7 @@ namespace Smarket.API.Model.Context
 
         public string Avatar { get; set; }
 
+        [ForeignKey("UserId")]
         public virtual Users Users { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

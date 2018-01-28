@@ -60,6 +60,7 @@
     <Compile Include="CommomModels\CommercesPhonesModel.cs" />
     <Compile Include="CommomModels\ConsumerModel.cs" />
     <Compile Include="CommomModels\ConsumersPhonesModel.cs" />
+    <Compile Include="CommomModels\EmployeeModel.cs" />
     <Compile Include="CommomModels\PhoneModel.cs" />
     <Compile Include="CommomModels\TypePhoneModel.cs" />
     <Compile Include="CommomModels\UserModel.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Returns\BaseReturn.cs" />
+    <Compile Include="Returns\CommerceReturn.cs" />
     <Compile Include="Returns\ConsumerReturn.cs" />
     <Compile Include="Returns\LoginReturn.cs" />
     <Compile Include="Returns\SaveConsumerReturn.cs" />

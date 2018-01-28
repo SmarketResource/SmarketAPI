@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceCommerce.cs" />
     <Compile Include="Services\ServiceConsumer.cs" />
     <Compile Include="Services\ServiceLogin.cs" />
     <Compile Include="Services\ServiceLog.cs" />

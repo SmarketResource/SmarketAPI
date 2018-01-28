@@ -31,14 +31,15 @@ namespace Smarket.API.App_Start
             container.RegisterType<IRepositoryLog,              RepositoryLog>();
             container.RegisterType<IRepositoryPhone,            RepositoryPhone>();
             container.RegisterType<IRepositoryConsumersPhones,  RepositoryConsumersPhones>();
-
+            container.RegisterType<IRepositoryCommerce,         RepositoryCommerce>();
             //Services
-            container.RegisterType<IServiceBase<EntityBase>, ServiceBase<EntityBase>>();
-            container.RegisterType<IServiceUser,             ServiceUser>();
-            container.RegisterType<IServiceLogin,            ServiceLogin>();
-            container.RegisterType<IServiceConsumer,         ServiceConsumer>();
-            container.RegisterType<IServiceLog,              ServiceLog>();
-            container.RegisterType<IServicePhone,            ServicePhone>();
+            container.RegisterType<IServiceBase<EntityBase>,    ServiceBase<EntityBase>>();
+            container.RegisterType<IServiceUser,                ServiceUser>();
+            container.RegisterType<IServiceLogin,               ServiceLogin>();
+            container.RegisterType<IServiceConsumer,            ServiceConsumer>();
+            container.RegisterType<IServiceLog,                 ServiceLog>();
+            container.RegisterType<IServicePhone,               ServicePhone>();
+            container.RegisterType<IServiceCommerce,            ServiceCommerce>();
 
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);

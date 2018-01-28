@@ -37,9 +37,11 @@ namespace Smarket.API.Model.Context
         public string CPF { get; set; }
 
         public string Avatar { get; set; }
-
+        
+        [ForeignKey("UserId")]
         public virtual Users Users { get; set; }
 
+        [ForeignKey("CommerceId")]
         public virtual Commerce Commerce { get; set; }
 
         public virtual EmployeeRole EmployeeRole { get; set; }

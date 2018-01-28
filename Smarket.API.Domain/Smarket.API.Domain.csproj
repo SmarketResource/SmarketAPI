@@ -52,12 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IRepositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryCommerce.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumer.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumersPhones.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryLog.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryPhone.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryUser.cs" />
     <Compile Include="Interfaces\IServices\IServiceBase.cs" />
+    <Compile Include="Interfaces\IServices\IServiceCommerce.cs" />
     <Compile Include="Interfaces\IServices\IServiceConsumer.cs" />
     <Compile Include="Interfaces\IServices\IServiceLog.cs" />
     <Compile Include="Interfaces\IServices\IServiceLogin.cs" />

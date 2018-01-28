@@ -198,6 +198,7 @@
     <Compile Include="AutoMapper\ServiceModelToViewModelMapping.cs" />
     <Compile Include="AutoMapper\ViewModelToServiceModelMapping.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommerceController.cs" />
     <Compile Include="Controllers\ConsumersController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsersController.cs" />

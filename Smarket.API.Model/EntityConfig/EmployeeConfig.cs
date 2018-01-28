@@ -21,7 +21,7 @@ namespace Smarket.API.Model.EntityConfig
             });
 
             HasRequired(x => x.Users).WithRequiredDependent();
-            HasRequired(x => x.Commerce).WithRequiredDependent();
+            //HasRequired(x => x.Commerce).WithRequiredPrincipal();
         }
 
     }

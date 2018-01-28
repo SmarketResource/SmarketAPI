@@ -23,11 +23,12 @@ namespace Smarket.API.Model.Context
         public virtual IDbSet<TypePhone>                TypePhone               { get; set; }
         public virtual IDbSet<TypeUsers>                TypeUsers               { get; set; }
         public virtual IDbSet<Users>                    Users                   { get; set; }
-        public virtual IDbSet<ConsumersPhones>          ConsumersPhones         { get; set; }
-        public virtual IDbSet<CommerceEmployeePhones>   CommerceEmployeePhones  { get; set; }
+        //public virtual IDbSet<ConsumersPhones>          ConsumersPhones         { get; set; }
+        //public virtual IDbSet<CommerceEmployeePhones>   CommerceEmployeePhones  { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 

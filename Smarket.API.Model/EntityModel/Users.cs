@@ -21,7 +21,8 @@ namespace Smarket.API.Model.Context
         public string UserPass { get; set; }
 
         public DateTime? UserLastAccess { get; set; }
-
+        
+        [ForeignKey("TypeUserId")]
         public virtual TypeUsers TypeUsers { get; set; }
     }
 }

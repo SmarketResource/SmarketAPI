@@ -46,7 +46,6 @@ namespace Smarket.API.Service.Services
         {
 
             var user = _repositoryUser.Find(c => c.UserLogin == username && c.UserPass == password).FirstOrDefault();
-            //var user = db.Users.Where(c => c.UserLogin == username && c.UserPass == password).FirstOrDefault();
 
             if (user == null)
             {
