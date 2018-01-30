@@ -5,9 +5,11 @@ using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System.Web.Http;
 using Smarket.API.Domain.Interfaces.IServices;
+using System.Web.Http.Cors;
 
 namespace Smarket.API.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "GET,POST")]
     public class LoginController : ApiController
     {
         private  IServiceLogin _serviceLogin;
@@ -20,7 +22,7 @@ namespace Smarket.API.Controllers
             _serviceLogin = serviceLogin;
             _serviceLog = serviceLog;
         }
-
+        
         [HttpGet]
         public IHttpActionResult GetGeneratedToken()
         {

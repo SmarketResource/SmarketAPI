@@ -22,6 +22,7 @@ namespace Smarket.API.Controllers
             _serviceLog = serviceLog;
         }
 
+        [Authorize]
         [HttpGet]
         public IHttpActionResult GetConsumers()
         {
@@ -44,6 +45,7 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
+        [Authorize]
         [HttpPost]
         public IHttpActionResult SaveConsumer(SaveConsumerCommand command)
         {

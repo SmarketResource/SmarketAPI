@@ -24,6 +24,7 @@ namespace Smarket.API.Controllers
             _serviceLog = serviceLog;
         }
 
+        [Authorize]
         [HttpGet]
         public IHttpActionResult GetCommerces()
         {
@@ -46,6 +47,7 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
+        [Authorize]
         [HttpPost]
         public IHttpActionResult SaveCommerce(SaveCommerceCommand command)
         {

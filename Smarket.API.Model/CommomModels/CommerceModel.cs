@@ -9,7 +9,7 @@ namespace Smarket.API.Model.CommomModels
     public class CommerceModel
     {
 
-        public Guid     CommerceId                  { get; set; }
+        public Guid     CommerceId              { get; set; }
 
         public string   CNPJ                    { get; set; }
 
