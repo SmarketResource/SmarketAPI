@@ -1,16 +1,16 @@
-﻿using Microsoft.Owin.Security;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Infrastructure.Repositories;
 using Smarket.API.Model.Context;
 using Smarket.API.Resources.Utils;
 using Smarket.API.Service.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
+
 
 namespace Smarket.API.Authorization
 {
@@ -50,7 +50,7 @@ namespace Smarket.API.Authorization
                 var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
                     {
-                        "Email", account.Users.FirstOrDefault().UserId.ToString()
+                        "Email", account.Users.FirstOrDefault().UserLogin
                     }
                 });
                 var ticket = new AuthenticationTicket(identity, props);

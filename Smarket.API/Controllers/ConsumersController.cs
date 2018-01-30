@@ -21,7 +21,11 @@ namespace Smarket.API.Controllers
             _serviceConsumer = serviceConsumer;
             _serviceLog = serviceLog;
         }
-
+        
+        /// <summary>
+        /// List all consumers in database
+        /// </summary>
+        /// <returns>Return a list of consumers</returns>
         [Authorize]
         [HttpGet]
         public IHttpActionResult GetConsumers()
@@ -45,6 +49,12 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
+
+        /// <summary>
+        /// Save a consumer
+        /// </summary>
+        /// <param name="command">Consumer data</param>
+        /// <returns>Return a message if success or failed</returns>
         [Authorize]
         [HttpPost]
         public IHttpActionResult SaveConsumer(SaveConsumerCommand command)

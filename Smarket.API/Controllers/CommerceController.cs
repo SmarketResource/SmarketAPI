@@ -24,6 +24,10 @@ namespace Smarket.API.Controllers
             _serviceLog = serviceLog;
         }
 
+        /// <summary>
+        /// List all Commerces in database
+        /// </summary>
+        /// <returns>Return a list of commerce</returns>
         [Authorize]
         [HttpGet]
         public IHttpActionResult GetCommerces()
@@ -47,6 +51,11 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
+        /// <summary>
+        /// Save a commerce
+        /// </summary>
+        /// <param name="command">Commerce data</param>
+        /// <returns>Return a message if success or failed</returns>
         [Authorize]
         [HttpPost]
         public IHttpActionResult SaveCommerce(SaveCommerceCommand command)

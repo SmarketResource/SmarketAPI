@@ -3,7 +3,6 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Swashbuckle.Swagger;
-using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
