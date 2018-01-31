@@ -6,22 +6,34 @@ using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Smarket.API.Controllers
 {
+    /// <summary>
+    /// UsersController Class
+    /// </summary>
     public class UsersController : BaseController
     {
 
         private readonly IServiceUser _serviceUser;
         private readonly IServiceLog _serviceLog;
 
+        /// <summary>
+        /// UsersController Constructor
+        /// </summary>
         public UsersController(IServiceUser serviceUser, IServiceLog serviceLog)
         {
             _serviceUser = serviceUser;
             _serviceLog = serviceLog;
         }
 
+        /// <summary>
+        /// List all Users in database
+        /// </summary>
+        /// <remarks>Return a list of users</remarks>
         [HttpGet]
+        [ResponseType(typeof(UserReturn))]
         public IHttpActionResult GetUsers()
         {
             var returnModel = new UserReturn();
@@ -41,7 +53,13 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
+        /// <summary>
+        /// Save a User
+        /// </summary>
+        /// <param name="command">Users data</param>
+        /// <remarks>Return a message if success or failed</remarks>
         [HttpPost]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public IHttpActionResult SaveUser(SaveUserCommand command)
         {
             var returnModel = new BaseReturn();

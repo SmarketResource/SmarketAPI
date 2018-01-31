@@ -9,15 +9,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Smarket.API.Controllers
 {
+    /// <summary>
+    /// CommerceController Class
+    /// </summary>
     public class CommerceController : BaseController
     {
 
         public readonly IServiceCommerce _serviceCommerce;
         public readonly IServiceLog _serviceLog;
 
+        /// <summary>
+        /// CommerceController Constructor
+        /// </summary>
         public CommerceController(IServiceCommerce serviceCommerce, IServiceLog serviceLog)
         {
             _serviceCommerce = serviceCommerce;
@@ -27,9 +34,10 @@ namespace Smarket.API.Controllers
         /// <summary>
         /// List all Commerces in database
         /// </summary>
-        /// <returns>Return a list of commerce</returns>
-        [Authorize]
+        /// <remarks>Return a list of commerce</remarks>
         [HttpGet]
+        [Authorize]
+        [ResponseType(typeof(CommerceReturn))]
         public IHttpActionResult GetCommerces()
         {
             var returnModel = new CommerceReturn();
@@ -55,9 +63,9 @@ namespace Smarket.API.Controllers
         /// Save a commerce
         /// </summary>
         /// <param name="command">Commerce data</param>
-        /// <returns>Return a message if success or failed</returns>
-        [Authorize]
+        /// <remarks>Return a message if success or failed</remarks>
         [HttpPost]
+        [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult SaveCommerce(SaveCommerceCommand command)
         {
             var returnModel = new BaseReturn();

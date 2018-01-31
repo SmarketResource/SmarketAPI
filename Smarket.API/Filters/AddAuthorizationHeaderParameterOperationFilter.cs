@@ -24,7 +24,7 @@ namespace Smarket.API.Filters
                 name        = "Authorization",
                 @in         = "header",
                 description = "access token",
-                required    = true,
+                required    = false,
                 type        = "string"
             });
         }

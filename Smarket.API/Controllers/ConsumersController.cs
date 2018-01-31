@@ -7,27 +7,35 @@ using Smarket.API.Resources.Utils;
 using AutoMapper;
 using Smarket.API.Model.Context;
 using System.Collections.Generic;
+using System.Web.Http.Description;
 
 namespace Smarket.API.Controllers
 {
+    /// <summary>
+    /// ConsumersController Class
+    /// </summary>
     public class ConsumersController : BaseController
     {
 
         public readonly IServiceConsumer _serviceConsumer;
         public readonly IServiceLog _serviceLog;
 
+        /// <summary>
+        /// ConsumersController Constructor
+        /// </summary>
         public ConsumersController(IServiceConsumer serviceConsumer, IServiceLog serviceLog)
         {
             _serviceConsumer = serviceConsumer;
             _serviceLog = serviceLog;
         }
-        
+
         /// <summary>
         /// List all consumers in database
         /// </summary>
-        /// <returns>Return a list of consumers</returns>
-        [Authorize]
+        /// <remarks>Return a list of consumers</remarks>
         [HttpGet]
+        [Authorize]
+        [ResponseType(typeof(ConsumerReturn))]
         public IHttpActionResult GetConsumers()
         {
             var returnModel = new ConsumerReturn();
@@ -54,9 +62,9 @@ namespace Smarket.API.Controllers
         /// Save a consumer
         /// </summary>
         /// <param name="command">Consumer data</param>
-        /// <returns>Return a message if success or failed</returns>
-        [Authorize]
+        /// <remarks>Return a message if success or failed</remarks>
         [HttpPost]
+        [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult SaveConsumer(SaveConsumerCommand command)
         {
             var returnModel = new BaseReturn();

@@ -1,10 +1,8 @@
 ﻿using Smarket.API.Filters;
 using Smarket.API.Model.Returns;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
 
 namespace Smarket.API.Controllers
@@ -12,6 +10,7 @@ namespace Smarket.API.Controllers
     [APIMainFilter]
     public class BaseController : ApiController
     {
+        [ApiExplorerSettings(IgnoreApi = true)]
         public BaseReturn ReturnModelError(ModelStateDictionary modelState, string msgError)
         {
             foreach (var model in modelState.Values)
