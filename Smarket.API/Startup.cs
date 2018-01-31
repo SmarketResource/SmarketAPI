@@ -42,7 +42,7 @@ namespace Smarket.API
     {
         public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
         {
-            swaggerDoc.paths.Add("api/security/token", new PathItem
+            swaggerDoc.paths.Add("/security/token", new PathItem
             {
                 post = new Operation
                 {
