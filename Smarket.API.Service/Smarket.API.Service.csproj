@@ -60,11 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceCity.cs" />
     <Compile Include="Services\ServiceCommerce.cs" />
     <Compile Include="Services\ServiceConsumer.cs" />
     <Compile Include="Services\ServiceLogin.cs" />
     <Compile Include="Services\ServiceLog.cs" />
     <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\ServiceMarket.cs" />
     <Compile Include="Services\ServicePhone.cs" />
     <Compile Include="Services\ServiceUser.cs" />
   </ItemGroup>

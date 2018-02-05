@@ -1,24 +1,25 @@
 ﻿using Smarket.API.Domain.Interfaces.IContext;
 using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Model.Context;
+using Smarket.API.Model.EntityModel;
 
 namespace Smarket.API.Infrastructure.Repositories
 {
-    public class RepositoryPhone : RepositoryBase<Phones>, IRepositoryPhone
+    public class RepositoryCity : RepositoryBase<Cities>, IRepositoryCity
     {
 
         private readonly SmarketContext _context;
 
-        public RepositoryPhone(IDbContext context) : base(context)
+        public RepositoryCity(IDbContext context) : base(context)
         {
             _context = (SmarketContext)context;
         }
 
-        public Phones AddPhone(Phones phone)
+        public Cities AddCity(Cities city)
         {
-            _context.Phones.Add(phone);
+            _context.Cities.Add(city);
 
-            return phone;
+            return city;
         }
     }
 }

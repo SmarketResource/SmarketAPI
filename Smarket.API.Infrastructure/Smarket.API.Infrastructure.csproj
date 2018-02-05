@@ -55,11 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RepositoryAddress.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\RepositoryCity.cs" />
     <Compile Include="Repositories\RepositoryCommerce.cs" />
     <Compile Include="Repositories\RepositoryConsumer.cs" />
     <Compile Include="Repositories\RepositoryConsumersPhones.cs" />
     <Compile Include="Repositories\RepositoryLog.cs" />
+    <Compile Include="Repositories\RepositoryMarket.cs" />
     <Compile Include="Repositories\RepositoryPhone.cs" />
     <Compile Include="Repositories\RepositoryUser.cs" />
   </ItemGroup>

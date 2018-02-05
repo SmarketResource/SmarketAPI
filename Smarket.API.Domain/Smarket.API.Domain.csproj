@@ -51,19 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRepositories\IRepositoryAddress.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryCity.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryCommerce.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumer.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumersPhones.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryLog.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryMarket.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryPhone.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryUser.cs" />
     <Compile Include="Interfaces\IServices\IServiceAuthorization.cs" />
     <Compile Include="Interfaces\IServices\IServiceBase.cs" />
+    <Compile Include="Interfaces\IServices\IServiceCity.cs" />
     <Compile Include="Interfaces\IServices\IServiceCommerce.cs" />
     <Compile Include="Interfaces\IServices\IServiceConsumer.cs" />
     <Compile Include="Interfaces\IServices\IServiceLog.cs" />
     <Compile Include="Interfaces\IServices\IServiceLogin.cs" />
+    <Compile Include="Interfaces\IServices\IServiceMarket.cs" />
     <Compile Include="Interfaces\IServices\IServicePhone.cs" />
     <Compile Include="Interfaces\IServices\IServiceUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

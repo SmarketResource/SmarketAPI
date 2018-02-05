@@ -3,6 +3,7 @@ using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Infrastructure.Repositories;
 using Smarket.API.Model.Context;
+using Smarket.API.Model.EntityModel;
 using Smarket.API.Service.Services;
 using System.Web.Http;
 using System.Web.Http.Dependencies;
@@ -26,12 +27,16 @@ namespace Smarket.API.App_Start
             container.RegisterType<IRepositoryUser,             RepositoryUser>();
             container.RegisterType<IRepositoryBase<TypeUsers>,  RepositoryBase<TypeUsers>>();
             container.RegisterType<IRepositoryBase<Phones>,     RepositoryBase<Phones>>();
+            container.RegisterType<IRepositoryBase<Address>,    RepositoryBase<Address>>();
             container.RegisterType<IRepositoryBase<TypePhone>,  RepositoryBase<TypePhone>>();
             container.RegisterType<IRepositoryConsumer,         RepositoryConsumer>();
             container.RegisterType<IRepositoryLog,              RepositoryLog>();
             container.RegisterType<IRepositoryPhone,            RepositoryPhone>();
             container.RegisterType<IRepositoryConsumersPhones,  RepositoryConsumersPhones>();
             container.RegisterType<IRepositoryCommerce,         RepositoryCommerce>();
+            container.RegisterType<IRepositoryMarket,           RepositoryMarket>();
+            container.RegisterType<IRepositoryAddress,          RepositoryAddress>();
+            container.RegisterType<IRepositoryCity,             RepositoryCity>();
 
             //Services
             container.RegisterType<IServiceBase<EntityBase>,    ServiceBase<EntityBase>>();
@@ -41,7 +46,8 @@ namespace Smarket.API.App_Start
             container.RegisterType<IServiceLog,                 ServiceLog>();
             container.RegisterType<IServicePhone,               ServicePhone>();
             container.RegisterType<IServiceCommerce,            ServiceCommerce>();
-
+            container.RegisterType<IServiceMarket,              ServiceMarket>();
+            container.RegisterType<IServiceCity,                ServiceCity>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
             return GlobalConfiguration.Configuration.DependencyResolver;

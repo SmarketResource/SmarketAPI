@@ -72,13 +72,13 @@ namespace Smarket.API.Controllers
 
             try
             {
-                var employee        = Mapper.Map<SaveCommerceCommand, Employee>(command);
+                var employee        = Mapper.Map<SaveCommerceCommand, CommerceEmployee>(command);
                 employee.Users      = Mapper.Map<SaveCommerceCommand, Users>(command);
                 employee.Users.TypeUserId = 3;
                 employee.Phones     = new List<Phones> { Mapper.Map<SaveCommerceCommand, Phones>(command) };
 
                 var commerce        = Mapper.Map<SaveCommerceCommand, Commerce>(command);
-                commerce.Employee   = new List<Employee> { employee };
+                commerce.CommerceEmployee   = new List<CommerceEmployee> { employee };
 
                 returnModel = _serviceCommerce.SaveCommerce(commerce);
                 returnModel.Message = GeneralMessages.SaveCommerceSuccess;

@@ -68,9 +68,29 @@ namespace Smarket.API.Resources.Utils
             get { return "SaveCommerce : Success"; }
         }
 
+        public static string GetMarketsSuccess
+        {
+            get { return "GetMarkets : Success "; }
+        }
+
+        public static string GetMarketsError
+        {
+            get { return "GetMarkets : Error"; }
+        }
+
         public static string SaveCommerceError
         {
             get { return "SaveCommerce : Error"; }
+        }
+
+        public static string SaveMarketSuccess
+        {
+            get { return "SaveMarket : Success"; }
+        }
+
+        public static string SaveMarketError
+        {
+            get { return "SaveMarket : Error"; }
         }
 
         public static string SavePhoneSuccess

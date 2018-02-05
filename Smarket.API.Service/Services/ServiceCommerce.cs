@@ -43,7 +43,7 @@ namespace Smarket.API.Service.Services
 
                 _repositoryCommerce.SaveChanges();
 
-                var Employee = commerce.Employee.FirstOrDefault();
+                var Employee = commerce.CommerceEmployee.FirstOrDefault();
 
                 var EmployeeUser = Employee.Users;
 

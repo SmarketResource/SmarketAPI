@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Smarket.API.Model.Commands;
 using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Context;
+using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using System;
 using System.Collections.Generic;
@@ -36,6 +38,18 @@ namespace Smarket.API.AutoMapper
                 .ForMember(dest => dest.MunicipalRegistration,  to => to.MapFrom(src => src.MunicipalRegistration))
                 .ForMember(dest => dest.Logo,                   to => to.MapFrom(src => src.Logo))
                 .ForMember(dest => dest.Banner,                 to => to.MapFrom(src => src.Banner));
+
+            CreateMap<Market, MarketModel>()
+                .ForMember(dest => dest.MarketId,               to => to.MapFrom(src => src.MarketId))
+                .ForMember(dest => dest.SocialName,             to => to.MapFrom(src => src.SocialName))
+                .ForMember(dest => dest.FantasyName,            to => to.MapFrom(src => src.FantasyName))
+                .ForMember(dest => dest.CNPJ,                   to => to.MapFrom(src => src.CNPJ))
+                .ForMember(dest => dest.StateRegistration,      to => to.MapFrom(src => src.StateRegistration))
+                .ForMember(dest => dest.MunicipalRegistration,  to => to.MapFrom(src => src.MunicipalRegistration))
+                .ForMember(dest => dest.Logo,                   to => to.MapFrom(src => src.Logo))
+                .ForMember(dest => dest.Banner,                 to => to.MapFrom(src => src.Banner));
+
+
         }
 
     }

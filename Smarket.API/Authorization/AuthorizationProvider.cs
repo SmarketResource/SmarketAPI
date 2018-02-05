@@ -51,13 +51,16 @@ namespace Smarket.API.Authorization
                 {
                     {
                         "Email", account.Users.FirstOrDefault().UserLogin
+                    },
+                    {
+                        "TypeUser", account.Users.FirstOrDefault().TypeUserId.ToString()
                     }
                 });
                 var ticket = new AuthenticationTicket(identity, props);
 
                 context.Validated(ticket);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 context.SetError("invalid_grant", GeneralMessages.GetUsersError);
             }

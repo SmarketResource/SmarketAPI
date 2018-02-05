@@ -1,5 +1,6 @@
 namespace Smarket.API.Model.Context
 {
+    using Smarket.API.Model.EntityModel;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -13,6 +14,10 @@ namespace Smarket.API.Model.Context
         public Phones()
         {
             Consumers = new HashSet<Consumers>();
+
+            CommerceEmployee = new HashSet<CommerceEmployee>();
+
+            MarketEmployee = new HashSet<MarketEmployee>();
         }
 
         [Key]
@@ -34,6 +39,9 @@ namespace Smarket.API.Model.Context
         public virtual ICollection<Consumers> Consumers { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employee { get; set; }
+        public virtual ICollection<CommerceEmployee> CommerceEmployee { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MarketEmployee> MarketEmployee { get; set; }
     }
 }

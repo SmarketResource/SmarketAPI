@@ -53,31 +53,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AuthUserCommand.cs" />
+    <Compile Include="Commands\SaveCityCommand.cs" />
     <Compile Include="Commands\SaveCommerceCommand.cs" />
     <Compile Include="Commands\SaveConsumerCommand.cs" />
+    <Compile Include="Commands\SaveMarketCommand.cs" />
     <Compile Include="Commands\SavePhoneCommand.cs" />
     <Compile Include="Commands\SaveUserCommand.cs" />
+    <Compile Include="CommomModels\CityModel.cs" />
     <Compile Include="CommomModels\CommerceModel.cs" />
     <Compile Include="CommomModels\CommercesPhonesModel.cs" />
     <Compile Include="CommomModels\ConsumerModel.cs" />
     <Compile Include="CommomModels\ConsumersPhonesModel.cs" />
     <Compile Include="CommomModels\EmployeeModel.cs" />
+    <Compile Include="CommomModels\MarketModel.cs" />
     <Compile Include="CommomModels\PhoneModel.cs" />
     <Compile Include="CommomModels\TypePhoneModel.cs" />
     <Compile Include="CommomModels\UserModel.cs" />
+    <Compile Include="EntityConfig\AddressConfig.cs" />
+    <Compile Include="EntityConfig\CitiesConfig.cs" />
     <Compile Include="EntityConfig\CommerceConfig.cs" />
-    <Compile Include="EntityConfig\EmployeeConfig.cs" />
+    <Compile Include="EntityConfig\CommerceEmployeeConfig.cs" />
     <Compile Include="EntityConfig\EmployeeRoleConfig.cs" />
+    <Compile Include="EntityConfig\MarketConfig.cs" />
+    <Compile Include="EntityConfig\MarketEmployeeConfig.cs" />
+    <Compile Include="EntityConfig\StatesConfig.cs" />
+    <Compile Include="EntityModel\Address.cs" />
+    <Compile Include="EntityModel\Cities.cs" />
     <Compile Include="EntityModel\Commerce.cs" />
     <Compile Include="EntityModel\CommerceEmployeePhones.cs" />
     <Compile Include="EntityModel\Consumers.cs" />
     <Compile Include="EntityModel\ConsumersPhones.cs" />
-    <Compile Include="EntityModel\Employee.cs" />
+    <Compile Include="EntityModel\CommerceEmployee.cs" />
     <Compile Include="EntityModel\EmployeeRole.cs" />
     <Compile Include="EntityModel\EntityBase.cs" />
     <Compile Include="EntityModel\Logs.cs" />
+    <Compile Include="EntityModel\Market.cs" />
+    <Compile Include="EntityModel\MarketEmployee.cs" />
     <Compile Include="EntityModel\Phones.cs" />
     <Compile Include="Context\SmarketContext.cs" />
+    <Compile Include="EntityModel\States.cs" />
     <Compile Include="EntityModel\TypePhone.cs" />
     <Compile Include="EntityModel\TypeUsers.cs" />
     <Compile Include="EntityModel\Users.cs" />
@@ -93,6 +107,7 @@
     <Compile Include="Returns\CommerceReturn.cs" />
     <Compile Include="Returns\ConsumerReturn.cs" />
     <Compile Include="Returns\LoginReturn.cs" />
+    <Compile Include="Returns\MarketReturn.cs" />
     <Compile Include="Returns\SaveConsumerReturn.cs" />
     <Compile Include="Returns\UserReturn.cs" />
   </ItemGroup>
