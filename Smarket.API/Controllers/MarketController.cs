@@ -1,16 +1,15 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Http;
+using System.Web.Http.Description;
+using AutoMapper;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Http.Description;
+
 
 namespace Smarket.API.Controllers
 {
@@ -30,7 +29,6 @@ namespace Smarket.API.Controllers
             _serviceMarket  = serviceMarket;
             _serviceLog     = serviceLog;
         }
-
 
         /// <summary>
         /// List all Markets in database
@@ -94,6 +92,5 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
-
     }
 }

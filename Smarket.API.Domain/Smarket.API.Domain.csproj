@@ -60,6 +60,7 @@
     <Compile Include="Interfaces\IRepositories\IRepositoryLog.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryMarket.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryPhone.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryState.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryUser.cs" />
     <Compile Include="Interfaces\IServices\IServiceAuthorization.cs" />
     <Compile Include="Interfaces\IServices\IServiceBase.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Interfaces\IServices\IServiceLogin.cs" />
     <Compile Include="Interfaces\IServices\IServiceMarket.cs" />
     <Compile Include="Interfaces\IServices\IServicePhone.cs" />
+    <Compile Include="Interfaces\IServices\IServiceState.cs" />
     <Compile Include="Interfaces\IServices\IServiceUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -67,6 +67,7 @@
     <Compile Include="CommomModels\EmployeeModel.cs" />
     <Compile Include="CommomModels\MarketModel.cs" />
     <Compile Include="CommomModels\PhoneModel.cs" />
+    <Compile Include="CommomModels\StateModel.cs" />
     <Compile Include="CommomModels\TypePhoneModel.cs" />
     <Compile Include="CommomModels\UserModel.cs" />
     <Compile Include="EntityConfig\AddressConfig.cs" />
@@ -104,11 +105,13 @@
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Returns\BaseReturn.cs" />
+    <Compile Include="Returns\CityReturn.cs" />
     <Compile Include="Returns\CommerceReturn.cs" />
     <Compile Include="Returns\ConsumerReturn.cs" />
     <Compile Include="Returns\LoginReturn.cs" />
     <Compile Include="Returns\MarketReturn.cs" />
     <Compile Include="Returns\SaveConsumerReturn.cs" />
+    <Compile Include="Returns\StateReturn.cs" />
     <Compile Include="Returns\UserReturn.cs" />
   </ItemGroup>
   <ItemGroup>

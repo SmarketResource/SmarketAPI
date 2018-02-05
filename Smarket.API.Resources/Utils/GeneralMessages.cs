@@ -103,6 +103,26 @@ namespace Smarket.API.Resources.Utils
             get { return "SavePhone : Error"; }
         }
 
+        public static string GetCitiesSuccess
+        {
+            get { return "GetCities : Success"; }
+        }
+
+        public static string GetCitiesError
+        {
+            get { return "GetCities : Error"; }
+        }
+
+        public static string GetStatesSuccess
+        {
+            get { return "GetStates : Success"; }
+        }
+
+        public static string GetStatesError
+        {
+            get { return "GetStates : Error"; }
+        }
+
         public static string GetGeneratedTokenSuccess
         {
             get { return "GetGeneratedToken : Token Generated with Success"; }

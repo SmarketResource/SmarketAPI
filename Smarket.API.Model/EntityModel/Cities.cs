@@ -17,10 +17,10 @@ namespace Smarket.API.Model.EntityModel
         public string Description { get; set; }
 
         [Required]
-        public float Latitude { get; set; }
+        public double Latitude { get; set; }
 
         [Required]
-        public float Longitude { get; set; }
+        public double Longitude { get; set; }
 
         [ForeignKey("StateId")]
         public virtual States States { get; set; }

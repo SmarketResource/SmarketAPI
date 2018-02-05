@@ -1,19 +1,12 @@
 ﻿using AutoMapper;
-using Smarket.API.Model.Commands;
 using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.EntityModel;
-using Smarket.API.Model.Returns;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Smarket.API.AutoMapper
 {
     public class ServiceModelToViewModelMapping : Profile
     {
-
         public ServiceModelToViewModelMapping()
         {
             CreateMap<Users, UserModel>()
@@ -49,8 +42,17 @@ namespace Smarket.API.AutoMapper
                 .ForMember(dest => dest.Logo,                   to => to.MapFrom(src => src.Logo))
                 .ForMember(dest => dest.Banner,                 to => to.MapFrom(src => src.Banner));
 
+            CreateMap<Cities, CityModel>()
+                .ForMember(dest => dest.CityId,                 to => to.MapFrom(src => src.CityId))
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
+                .ForMember(dest => dest.Latitude,               to => to.MapFrom(src => src.Latitude))
+                .ForMember(dest => dest.Longitude,              to => to.MapFrom(src => src.Longitude))
+                .ForMember(dest => dest.StateId,                to => to.MapFrom(src => src.StateId));
 
+            CreateMap<States, StateModel>()
+                .ForMember(dest => dest.StateId,                to => to.MapFrom(src => src.StateId))
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
+                .ForMember(dest => dest.Initials,               to => to.MapFrom(src => src.Initials));
         }
-
     }
 }

@@ -242,6 +242,7 @@
     <Compile Include="Controllers\ConsumersController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MarketController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Filters\AddAuthorizationHeaderParameterOperationFilter.cs" />
     <Compile Include="Filters\APIMainFilter.cs" />

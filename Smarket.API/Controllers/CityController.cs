@@ -1,16 +1,13 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Http;
+using System.Web.Http.Description;
+using AutoMapper;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
-using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Http.Description;
 
 namespace Smarket.API.Controllers
 {
@@ -51,6 +48,33 @@ namespace Smarket.API.Controllers
             {
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.SaveCommerceError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+            }
+
+            return Ok(returnModel);
+        }
+
+
+        /// <summary>
+        /// List all Cities by stateId in database
+        /// </summary>
+        /// <remarks>Return a list of cities</remarks>
+        [HttpGet]
+        [Authorize]
+        [ResponseType(typeof(CityReturn))]
+        public IHttpActionResult GetCitiesByStateId(int stateId)
+        {
+            var returnModel = new CityReturn();
+
+            try
+            {
+                returnModel = _serviceCity.GetCitiesByStateId(stateId);
+                returnModel.Message = GeneralMessages.GetCitiesSuccess;
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessages.GetCitiesError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
             }
 

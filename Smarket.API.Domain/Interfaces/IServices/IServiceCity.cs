@@ -10,6 +10,10 @@ namespace Smarket.API.Domain.Interfaces.IServices
 {
     public interface IServiceCity
     {
+        CityReturn GetCities();
+
+        CityReturn GetCitiesByStateId(int stateId);
+
         BaseReturn SaveCity(Cities city);
 
         BaseReturn SaveListCity(List<Cities> list);

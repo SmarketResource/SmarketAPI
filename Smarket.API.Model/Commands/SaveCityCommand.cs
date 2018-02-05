@@ -12,7 +12,7 @@ namespace Smarket.API.Model.Commands
         public int CityId { get; set; }
         public int StateId { get; set; }
         public string Description { get; set; }
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
 }

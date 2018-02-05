@@ -21,6 +21,24 @@ namespace Smarket.API.Service.Services
             _repositoryCity = repositoryCity;
         }
 
+        public CityReturn GetCitiesByStateId(int stateId)
+        {
+            var returnModel = new CityReturn();
+
+            returnModel = _repositoryCity.GetCitiesByStateId(stateId);
+
+            return returnModel;
+        }
+
+        public CityReturn GetCities()
+        {
+            var returnModel = new CityReturn();
+
+            returnModel = _repositoryCity.GetCities();
+
+            return returnModel;
+        }
+
         public BaseReturn SaveCity(Cities city)
         {
             var returnModel = new BaseReturn();

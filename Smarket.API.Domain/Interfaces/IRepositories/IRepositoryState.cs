@@ -8,12 +8,10 @@ using System.Threading.Tasks;
 
 namespace Smarket.API.Domain.Interfaces.IRepositories
 {
-    public interface IRepositoryCity : IRepositoryBase<Cities>
+    public interface IRepositoryState : IRepositoryBase<States>
     {
-        CityReturn GetCities();
 
-        CityReturn GetCitiesByStateId(int stateId);
+        StateReturn GetStates();
 
-        Cities AddCity(Cities city);
     }
 }

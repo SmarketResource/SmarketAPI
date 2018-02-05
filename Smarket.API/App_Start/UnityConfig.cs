@@ -37,6 +37,7 @@ namespace Smarket.API.App_Start
             container.RegisterType<IRepositoryMarket,           RepositoryMarket>();
             container.RegisterType<IRepositoryAddress,          RepositoryAddress>();
             container.RegisterType<IRepositoryCity,             RepositoryCity>();
+            container.RegisterType<IRepositoryState,            RepositoryState>();
 
             //Services
             container.RegisterType<IServiceBase<EntityBase>,    ServiceBase<EntityBase>>();
@@ -48,6 +49,7 @@ namespace Smarket.API.App_Start
             container.RegisterType<IServiceCommerce,            ServiceCommerce>();
             container.RegisterType<IServiceMarket,              ServiceMarket>();
             container.RegisterType<IServiceCity,                ServiceCity>();
+            container.RegisterType<IServiceState,               ServiceState>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
             return GlobalConfiguration.Configuration.DependencyResolver;
