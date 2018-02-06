@@ -18,8 +18,8 @@ namespace Smarket.API.Controllers
     /// </summary>
     public class MarketController : BaseController
     {
-        public readonly IServiceMarket  _serviceMarket;
-        public readonly IServiceLog     _serviceLog;
+        private readonly IServiceMarket  _serviceMarket;
+        private readonly IServiceLog     _serviceLog;
 
         /// <summary>
         /// MarketController Constructor

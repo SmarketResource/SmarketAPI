@@ -16,8 +16,8 @@ namespace Smarket.API.Controllers
     public class StateController : BaseController
     {
 
-        public readonly IServiceState _serviceState;
-        public readonly IServiceLog _serviceLog;
+        private readonly IServiceState _serviceState;
+        private readonly IServiceLog _serviceLog;
 
         /// <summary>
         /// StateController Constructor

@@ -19,8 +19,8 @@ namespace Smarket.API.Controllers
     public class CommerceController : BaseController
     {
 
-        public readonly IServiceCommerce _serviceCommerce;
-        public readonly IServiceLog _serviceLog;
+        private readonly IServiceCommerce _serviceCommerce;
+        private readonly IServiceLog _serviceLog;
 
         /// <summary>
         /// CommerceController Constructor

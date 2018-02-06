@@ -15,8 +15,8 @@ namespace Smarket.API.Controllers
     /// </summary>
     public class LoginController : ApiController
     {
-        private  IServiceLogin _serviceLogin;
-        private  IServiceLog _serviceLog;
+        private readonly IServiceLogin _serviceLogin;
+        private readonly IServiceLog _serviceLog;
 
         /// <summary>
         /// LoginController Constructor

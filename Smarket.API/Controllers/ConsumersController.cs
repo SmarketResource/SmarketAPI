@@ -17,8 +17,8 @@ namespace Smarket.API.Controllers
     public class ConsumersController : BaseController
     {
 
-        public readonly IServiceConsumer _serviceConsumer;
-        public readonly IServiceLog _serviceLog;
+        private readonly IServiceConsumer _serviceConsumer;
+        private readonly IServiceLog _serviceLog;
 
         /// <summary>
         /// ConsumersController Constructor

@@ -11,11 +11,14 @@ using Smarket.API.Resources.Utils;
 
 namespace Smarket.API.Controllers
 {
+    /// <summary>
+    /// CityController Class
+    /// </summary>
     public class CityController : BaseController
     {
 
-        public readonly IServiceCity _serviceCity;
-        public readonly IServiceLog _serviceLog;
+        private readonly IServiceCity _serviceCity;
+        private readonly IServiceLog _serviceLog;
 
         /// <summary>
         /// CityController Constructor
