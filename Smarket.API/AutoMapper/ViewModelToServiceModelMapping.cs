@@ -15,7 +15,7 @@ namespace Smarket.API.AutoMapper
             CreateMap<SaveUserCommand, Users>()
                 .ForMember(dest => dest.TypeUserId,             to => to.MapFrom(src => src.TypeUserId))
                 .ForMember(dest => dest.UserLogin,              to => to.MapFrom(src => src.UserLogin))
-                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => src.UserPass));
+                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => EncryptString.Encrypt(src.UserPass)));
 
             CreateMap<SaveConsumerCommand, Users>()
                 .ForMember(dest => dest.UserLogin,              to => to.MapFrom(src => src.UserLogin))
