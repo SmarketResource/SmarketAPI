@@ -7,6 +7,7 @@ using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
+using Smarket.API.Resources;
 using Smarket.API.Resources.Utils;
 
 namespace Smarket.API.Controllers
@@ -46,17 +47,17 @@ namespace Smarket.API.Controllers
                 var cities = Mapper.Map<List<SaveCityCommand>, List<Cities>>(command);
 
                 returnModel = _serviceCity.SaveListCity(cities);
+                returnModel.Message = GeneralMessagesPT.SaveCommerceSuccess;
             }
             catch (Exception ex)
             {
                 returnModel.Error = true;
-                returnModel.Message = GeneralMessages.SaveCommerceError + " : " + ex.Message;
+                returnModel.Message = GeneralMessagesPT.SaveCommerceError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
             }
 
             return Ok(returnModel);
         }
-
 
         /// <summary>
         /// List all Cities by stateId in database

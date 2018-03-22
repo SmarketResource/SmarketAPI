@@ -47,7 +47,9 @@ namespace Smarket.API.Service.Services
         public UserReturn Authenticate(string username, string password)
         {
 
-            var user = _repositoryUser.Find(c => c.UserLogin == username && c.UserPass == password).FirstOrDefault();
+            var passEncrypt = EncryptString.Encrypt(password);
+
+            var user = _repositoryUser.Find(c => c.UserLogin == username && c.UserPass == passEncrypt).FirstOrDefault();
 
             if (user == null)
             {

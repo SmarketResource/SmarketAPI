@@ -12,7 +12,9 @@ namespace Smarket.API.Model.EntityConfig
             Property(x => x.Name).IsRequired();
             Property(x => x.LastName).IsRequired();
             Property(x => x.Avatar).IsOptional();
+
             HasRequired(x => x.Users).WithRequiredDependent();
+
             HasMany(x => x.Phones).WithMany(x => x.Consumers).Map(ap =>
             {
                 ap.MapLeftKey("UserId");

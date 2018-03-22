@@ -1,11 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
-using Smarket.API.Model.Commands;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System.Web.Http;
 using Smarket.API.Domain.Interfaces.IServices;
-using System.Web.Http.Cors;
 using System.Web.Http.Description;
 
 namespace Smarket.API.Controllers

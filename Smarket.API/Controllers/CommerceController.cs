@@ -1,15 +1,13 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Http;
+using System.Web.Http.Description;
+using AutoMapper;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Http.Description;
 
 namespace Smarket.API.Controllers
 {

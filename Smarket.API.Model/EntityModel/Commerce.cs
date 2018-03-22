@@ -13,7 +13,6 @@ namespace Smarket.API.Model.Context
         public Commerce()
         {
             CommerceEmployee = new HashSet<CommerceEmployee>();
-
         }
 
         [Key]

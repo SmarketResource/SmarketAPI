@@ -1,9 +1,9 @@
-﻿using Smarket.API.Filters;
-using Smarket.API.Model.Returns;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Http.ModelBinding;
+using Smarket.API.Filters;
+using Smarket.API.Model.Returns;
 
 namespace Smarket.API.Controllers
 {

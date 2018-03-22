@@ -2,10 +2,7 @@
 using Smarket.API.Model.Commands;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.EntityModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Smarket.API.Resources.Utils;
 
 namespace Smarket.API.AutoMapper
 {
@@ -22,7 +19,7 @@ namespace Smarket.API.AutoMapper
 
             CreateMap<SaveConsumerCommand, Users>()
                 .ForMember(dest => dest.UserLogin,              to => to.MapFrom(src => src.UserLogin))
-                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => src.UserPass));
+                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => EncryptString.Encrypt(src.UserPass)));
 
             CreateMap<SaveConsumerCommand, Phones>()
                 .ForMember(dest => dest.TypePhoneId,            to => to.MapFrom(src => src.TypePhoneId))

@@ -16,9 +16,10 @@ namespace Smarket.API.Controllers
     /// </summary>
     public class ConsumersController : BaseController
     {
-
+        #region Services
         private readonly IServiceConsumer _serviceConsumer;
         private readonly IServiceLog _serviceLog;
+        #endregion  
 
         /// <summary>
         /// ConsumersController Constructor
@@ -51,12 +52,9 @@ namespace Smarket.API.Controllers
                 _serviceLog.SaveLog(returnModel.Message);
 
                 return Ok(returnModel);
-
             }
-
             return Ok(returnModel);
         }
-
 
         /// <summary>
         /// Save a consumer
@@ -91,6 +89,5 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
-
     }
 }

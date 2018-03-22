@@ -25,7 +25,7 @@ namespace Smarket.API.Controllers
         public UsersController(IServiceUser serviceUser, IServiceLog serviceLog)
         {
             _serviceUser = serviceUser;
-            _serviceLog = serviceLog;
+            _serviceLog  = serviceLog;
         }
 
         /// <summary>

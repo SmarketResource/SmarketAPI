@@ -1,12 +1,9 @@
-﻿using Smarket.API.Domain.Interfaces.IServices;
-using Smarket.API.Model.Returns;
-using Smarket.API.Resources.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System;
 using System.Web.Http;
 using System.Web.Http.Description;
+using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Model.Returns;
+using Smarket.API.Resources.Utils;
 
 namespace Smarket.API.Controllers
 {

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Smarket.API.Resources.Utils
 {
@@ -15,7 +12,7 @@ namespace Smarket.API.Resources.Utils
         public static string Encrypt(string message)
         {
             byte[] Results;
-            System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+            UTF8Encoding UTF8 = new UTF8Encoding();
 
             MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
             byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes(Passphrase));
@@ -45,7 +42,7 @@ namespace Smarket.API.Resources.Utils
         public static string Decrypt(string Message)
         {
             byte[] Results;
-            System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+            UTF8Encoding UTF8 = new UTF8Encoding();
 
             MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
             byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes(Passphrase));
