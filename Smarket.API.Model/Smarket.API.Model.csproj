@@ -59,6 +59,7 @@
     <Compile Include="Commands\SaveMarketCommand.cs" />
     <Compile Include="Commands\SavePhoneCommand.cs" />
     <Compile Include="Commands\SaveUserCommand.cs" />
+    <Compile Include="CommomModels\BrandModel.cs" />
     <Compile Include="CommomModels\CityModel.cs" />
     <Compile Include="CommomModels\CommerceModel.cs" />
     <Compile Include="CommomModels\CommercesPhonesModel.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="CommomModels\TypePhoneModel.cs" />
     <Compile Include="CommomModels\UserModel.cs" />
     <Compile Include="EntityConfig\AddressConfig.cs" />
+    <Compile Include="EntityConfig\BrandsConfig.cs" />
     <Compile Include="EntityConfig\CitiesConfig.cs" />
     <Compile Include="EntityConfig\CommerceConfig.cs" />
     <Compile Include="EntityConfig\CommerceEmployeeConfig.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="EntityConfig\MarketEmployeeConfig.cs" />
     <Compile Include="EntityConfig\StatesConfig.cs" />
     <Compile Include="EntityModel\Address.cs" />
+    <Compile Include="EntityModel\Brands.cs" />
     <Compile Include="EntityModel\Cities.cs" />
     <Compile Include="EntityModel\Commerce.cs" />
     <Compile Include="EntityModel\CommerceEmployeePhones.cs" />
@@ -105,6 +108,7 @@
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Returns\BaseReturn.cs" />
+    <Compile Include="Returns\BrandReturn.cs" />
     <Compile Include="Returns\CityReturn.cs" />
     <Compile Include="Returns\CommerceReturn.cs" />
     <Compile Include="Returns\ConsumerReturn.cs" />

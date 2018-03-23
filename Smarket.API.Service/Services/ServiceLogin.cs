@@ -57,7 +57,6 @@ namespace Smarket.API.Service.Services
                 {
                     Error = true,
                     Message = "Usuario e/ou Senha invalidos"
-
                 };
             }
 

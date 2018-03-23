@@ -237,6 +237,7 @@
     <Compile Include="AutoMapper\ServiceModelToViewModelMapping.cs" />
     <Compile Include="AutoMapper\ViewModelToServiceModelMapping.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\CommerceController.cs" />
     <Compile Include="Controllers\ConsumersController.cs" />

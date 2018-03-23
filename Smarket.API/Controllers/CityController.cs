@@ -66,6 +66,7 @@ namespace Smarket.API.Controllers
         [HttpGet]
         [Authorize]
         [ResponseType(typeof(CityReturn))]
+        [Route("City/GetCitiesByStateId/{stateId}")]
         public IHttpActionResult GetCitiesByStateId(int stateId)
         {
             var returnModel = new CityReturn();
