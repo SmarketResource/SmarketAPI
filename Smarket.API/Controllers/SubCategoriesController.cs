@@ -177,5 +177,39 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
+
+        /// <summary>
+        /// Return a subcategory by category
+        /// </summary>
+        /// <remarks>Return a subcategory</remarks>
+        [HttpGet]
+        [Authorize]
+        [ResponseType(typeof(SubCategoryReturn))]
+        [Route("api/SubCategories/GetSubCategoryByCategory/{categoryId}")]
+        public IHttpActionResult GetCagetoryByCategory(Guid categoryId)
+        {
+            var returnModel = new SubCategoryReturn();
+
+            try
+            {
+                returnModel = _serviceSubCategory.GetSubCategoryByCategory(categoryId);
+                returnModel.Message = GeneralMessagesEN.GetSubCategoryByDescriptionSuccess;
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.GetSubCategoryByCategoryError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
+            }
+
+            return Ok(returnModel);
+        }
     }
 }
