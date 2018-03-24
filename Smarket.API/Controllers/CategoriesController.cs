@@ -22,7 +22,6 @@ namespace Smarket.API.Controllers
         private readonly IServiceCategory _serviceCategory;
         private readonly IServiceLog _serviceLog;
 
-
         /// <summary>
         /// CategoriesController Constructor
         /// </summary>
@@ -39,6 +38,7 @@ namespace Smarket.API.Controllers
         /// <remarks>Return a message if success or failed</remarks>
         [HttpPost]
         [Authorize]
+        [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult SaveCategory(SaveCategoryCommand command)
         {
             var returnModel = new BaseReturn();
@@ -48,9 +48,16 @@ namespace Smarket.API.Controllers
                 var category = Mapper.Map<SaveCategoryCommand, Categories>(command);
 
                 returnModel = _serviceCategory.SaveCategory(category);
-                returnModel.Message = GeneralMessagesEN.SaveBrandSuccess;
 
-
+                if (returnModel.Error)
+                {
+                    return new ResponseMessageResult(
+                        Request.CreateErrorResponse(
+                            (HttpStatusCode.BadRequest),
+                            new HttpError(returnModel.Message)
+                        )
+                    );
+                }
             }
             catch (Exception ex)
             {
@@ -68,7 +75,6 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
-
 
         /// <summary>
         /// List all Categories in database
@@ -170,5 +176,7 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
+
+
     }
 }

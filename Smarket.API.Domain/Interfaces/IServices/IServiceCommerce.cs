@@ -1,10 +1,5 @@
 ﻿using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Smarket.API.Domain.Interfaces.IServices
 {
@@ -12,6 +7,6 @@ namespace Smarket.API.Domain.Interfaces.IServices
     {
         CommerceReturn GetCommerces();
 
-        BaseReturn SaveCommerce(Commerce commerce);
+        BaseReturn SaveCommerce(Commerce newCommerce);
     }
 }

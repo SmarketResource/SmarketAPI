@@ -86,7 +86,16 @@ namespace Smarket.API.Controllers
                 consumer.Users = user;
 
                 returnModel = _serviceConsumer.SaveConsumer(consumer);
-                returnModel.Message = GeneralMessages.SaveCommerceSuccess;
+
+                if (returnModel.Error)
+                {
+                    return new ResponseMessageResult(
+                        Request.CreateErrorResponse(
+                            (HttpStatusCode.BadRequest),
+                            new HttpError(returnModel.Message)
+                        )
+                    );
+                }
             }
             catch(Exception ex)
             {

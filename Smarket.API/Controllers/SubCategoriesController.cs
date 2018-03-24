@@ -3,7 +3,7 @@ using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
-using Smarket.API.Resources.Utils;
+using Smarket.API.Resources;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -15,40 +15,40 @@ namespace Smarket.API.Controllers
 {
 
     /// <summary>
-    /// BrandsController Class
+    /// SubCategoriesController Class
     /// </summary>
-    public class BrandsController : BaseController
+    public class SubCategoriesController : BaseController
     {
 
-        private readonly IServiceBrand _serviceBrand;
+        private readonly IServiceSubCategory _serviceSubCategory;
         private readonly IServiceLog _serviceLog;
 
         /// <summary>
-        /// BrandsController Constructor
+        /// SubCategoriesController Constructor
         /// </summary>
-        public BrandsController(IServiceBrand serviceBrand, IServiceLog serviceLog)
+        public SubCategoriesController(IServiceSubCategory serviceSubCategory, IServiceLog serviceLog)
         {
-            _serviceBrand = serviceBrand;
+            _serviceSubCategory = serviceSubCategory;
             _serviceLog = serviceLog;
         }
 
         /// <summary>
-        /// Save a Brand
+        /// Save a Subcategory
         /// </summary>
-        /// <param name="command">Brands data</param>
+        /// <param name="command">Subcategories data</param>
         /// <remarks>Return a message if success or failed</remarks>
         [HttpPost]
         [Authorize]
         [ResponseType(typeof(BaseReturn))]
-        public IHttpActionResult SaveBrand(SaveBrandCommand command)
+        public IHttpActionResult SaveSubCategory(SaveSubCategoryCommand command)
         {
             var returnModel = new BaseReturn();
 
             try
             {
-                var brand = Mapper.Map<SaveBrandCommand, Brands>(command);
+                var subcategory = Mapper.Map<SaveSubCategoryCommand, SubCategories>(command);
 
-                returnModel = _serviceBrand.SaveBrand(brand);
+                returnModel = _serviceSubCategory.SaveSubCategory(subcategory);
 
                 if (returnModel.Error)
                 {
@@ -63,7 +63,40 @@ namespace Smarket.API.Controllers
             catch (Exception ex)
             {
                 returnModel.Error = true;
-                returnModel.Message = GeneralMessages.SaveUserError + " : " + ex.Message;
+                returnModel.Message = GeneralMessagesEN.SaveCategoryError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
+            }
+
+            return Ok(returnModel);
+        }
+
+
+        /// <summary>
+        /// List all subcategories in database
+        /// </summary>
+        /// <remarks>Return a list of subcategories</remarks>
+        [HttpGet]
+        [ResponseType(typeof(SubCategoryReturn))]
+        public IHttpActionResult GetSubCategories()
+        {
+            var returnModel = new SubCategoryReturn();
+
+            try
+            {
+                returnModel = _serviceSubCategory.GetSubCategories();
+                returnModel.Message = GeneralMessagesEN.GetSubCategoriesSuccess;
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.GetSubCategoriesError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
 
                 return new ResponseMessageResult(
@@ -78,60 +111,26 @@ namespace Smarket.API.Controllers
         }
 
         /// <summary>
-        /// List all Brands in database
+        /// Return a subcategory by id
         /// </summary>
-        /// <remarks>Return a list of brands</remarks>
+        /// <remarks>Return a subcategory</remarks>
         [HttpGet]
         [Authorize]
-        [ResponseType(typeof(BrandReturn))]
-        public IHttpActionResult GetBrands()
+        [ResponseType(typeof(SubCategoryReturn))]
+        [Route("api/SubCategories/GetSubCategoryById/{id}")]
+        public IHttpActionResult GetSubCagetoryById(Guid id)
         {
-            var returnModel = new BrandReturn();
+            var returnModel = new SubCategoryReturn();
 
             try
             {
-                returnModel = _serviceBrand.GetBrands();
-                returnModel.Message = GeneralMessages.GetCitiesSuccess;
+                returnModel = _serviceSubCategory.GetSubCategoryById(id);
+                returnModel.Message = GeneralMessagesEN.GetSubCategoryByIdSuccess;
             }
             catch (Exception ex)
             {
                 returnModel.Error = true;
-                returnModel.Message = GeneralMessages.GetCitiesError + " : " + ex.Message;
-                _serviceLog.SaveLog(returnModel.Message);
-
-                return new ResponseMessageResult(
-                    Request.CreateErrorResponse(
-                        (HttpStatusCode.BadRequest),
-                        new HttpError(returnModel.Message)
-                    )
-                );
-
-            }
-
-            return Ok(returnModel);
-        }
-
-        /// <summary>
-        /// Return a brand by id
-        /// </summary>
-        /// <remarks>Return a brand</remarks>
-        [HttpGet]
-        [Authorize]
-        [ResponseType(typeof(BrandReturn))]
-        [Route("api/Brands/GetBrandById/{id}")]
-        public IHttpActionResult GetBrandById(Guid id)
-        {
-            var returnModel = new BrandReturn();
-
-            try
-            {
-                returnModel = _serviceBrand.GetBrandById(id);
-                returnModel.Message = GeneralMessages.GetCitiesSuccess;
-            }
-            catch (Exception ex)
-            {
-                returnModel.Error = true;
-                returnModel.Message = GeneralMessages.GetCitiesError + " : " + ex.Message;
+                returnModel.Message = GeneralMessagesEN.GetSubCategoryByIdError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
 
                 return new ResponseMessageResult(
@@ -146,26 +145,26 @@ namespace Smarket.API.Controllers
         }
 
         /// <summary>
-        /// Return a brand by description
+        /// Return a subcategory by description
         /// </summary>
-        /// <remarks>Return a brand</remarks>
+        /// <remarks>Return a subcategory</remarks>
         [HttpGet]
         [Authorize]
-        [ResponseType(typeof(BrandReturn))]
-        [Route("api/Brands/GetBrandByDescription/{description}")]
-        public IHttpActionResult GetBrandByDescription(string description)
+        [ResponseType(typeof(SubCategoryReturn))]
+        [Route("api/SubCategories/GetSubCategoryByDescription/{description}")]
+        public IHttpActionResult GetCagetoryByDescription(string description)
         {
-            var returnModel = new BrandReturn();
+            var returnModel = new SubCategoryReturn();
 
             try
             {
-                returnModel = _serviceBrand.GetBrandByDescription(description);
-                returnModel.Message = GeneralMessages.GetCitiesSuccess;
+                returnModel = _serviceSubCategory.GetSubCategoryByDescription(description);
+                returnModel.Message = GeneralMessagesEN.GetSubCategoryByDescriptionSuccess;
             }
             catch (Exception ex)
             {
                 returnModel.Error = true;
-                returnModel.Message = GeneralMessages.GetCitiesError + " : " + ex.Message;
+                returnModel.Message = GeneralMessagesEN.GetSubCategoryByDescriptionError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
 
                 return new ResponseMessageResult(
@@ -178,6 +177,5 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
-
     }
 }

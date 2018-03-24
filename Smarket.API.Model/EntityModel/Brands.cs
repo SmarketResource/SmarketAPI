@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Smarket.API.Model.EntityModel
 {
     [Table("Brands")]
-    public class Brands : EntityBase
+    public partial class Brands : EntityBase
     {
         [Key]
         public Guid BrandId { get; set; }

@@ -2,6 +2,7 @@
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
+using Smarket.API.Resources;
 using System;
 using System.Linq;
 using System.Transactions;
@@ -31,32 +32,46 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public BaseReturn SaveCommerce(Commerce commerce)
+        public BaseReturn SaveCommerce(Commerce newCommerce)
         {
             var returnModel = new BaseReturn();
 
-            
-            using (var transaction = new TransactionScope())
+            var commerceExists = _repositoryCommerce.Get(m => m.FantasyName == newCommerce.FantasyName);
+
+            if (commerceExists == null)
             {
 
-                _repositoryCommerce.AddCommerce(commerce);
 
-                _repositoryCommerce.SaveChanges();
+                using (var transaction = new TransactionScope())
+                {
 
-                var Employee = commerce.CommerceEmployee.FirstOrDefault();
+                    _repositoryCommerce.AddCommerce(newCommerce);
 
-                var EmployeeUser = Employee.Users;
+                    _repositoryCommerce.SaveChanges();
 
-                _repositoryUser.AddUser(EmployeeUser);
+                    var Employee = newCommerce.CommerceEmployee.FirstOrDefault();
 
-                _repositoryPhone.AddPhone(Employee.Phones.FirstOrDefault());
+                    var EmployeeUser = Employee.Users;
 
-                _repositoryCommerce.SaveChanges();
+                    _repositoryUser.AddUser(EmployeeUser);
 
-                transaction.Complete();
+                    _repositoryPhone.AddPhone(Employee.Phones.FirstOrDefault());
+
+                    _repositoryCommerce.SaveChanges();
+
+                    transaction.Complete();
+                }
+
+                returnModel.Message = GeneralMessagesEN.SaveCommerceSuccess;
+            }
+            else
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.SaveCommerceAlreadyExists;
             }
 
             return returnModel;
+
         }
     }
 }

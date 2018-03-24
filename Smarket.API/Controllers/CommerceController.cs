@@ -86,8 +86,16 @@ namespace Smarket.API.Controllers
                 commerce.CommerceEmployee   = new List<CommerceEmployee> { employee };
 
                 returnModel = _serviceCommerce.SaveCommerce(commerce);
-                returnModel.Message = GeneralMessages.SaveCommerceSuccess;
 
+                if (returnModel.Error)
+                {
+                    return new ResponseMessageResult(
+                        Request.CreateErrorResponse(
+                            (HttpStatusCode.BadRequest),
+                            new HttpError(returnModel.Message)
+                        )
+                    );
+                }
             }
             catch(Exception ex)
             {
@@ -105,8 +113,6 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
-
-
 
     }
 }

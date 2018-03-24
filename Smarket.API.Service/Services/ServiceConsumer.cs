@@ -5,6 +5,7 @@ using Smarket.API.Resources.Utils;
 using Smarket.API.Model.Context;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Domain.Interfaces.IRepositories;
+using Smarket.API.Resources;
 
 namespace Smarket.API.Service.Services
 {
@@ -31,30 +32,41 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public BaseReturn SaveConsumer(Consumers consumer)
+        public BaseReturn SaveConsumer(Consumers newConsumer)
         {
             var returnModel = new BaseReturn();
 
+            newConsumer.Users.TypeUserId   = 2;
 
-            consumer.Users.TypeUserId   = 2;
+            var consumerExists = _repositoryUser.Get(s => s.UserLogin == newConsumer.Users.UserLogin);
 
-            using(var transaction = new TransactionScope())
+            if (consumerExists == null)
             {
-                _repositoryConsumer.AddConsumer(consumer);
-                _repositoryConsumer.SaveChanges();
 
-                _repositoryUser.AddUser(consumer.Users);
+                using (var transaction = new TransactionScope())
+                {
+                    _repositoryConsumer.AddConsumer(newConsumer);
+                    _repositoryConsumer.SaveChanges();
 
-                _repositoryPhone.AddPhone(consumer.Phones.FirstOrDefault());
-                _repositoryConsumer.SaveChanges();
+                    _repositoryUser.AddUser(newConsumer.Users);
 
-                transaction.Complete();
+                    _repositoryPhone.AddPhone(newConsumer.Phones.FirstOrDefault());
+                    _repositoryConsumer.SaveChanges();
+
+                    transaction.Complete();
+                }
+
+                returnModel.Message = GeneralMessagesEN.SaveConsumerSuccess;
+
+            }
+            else
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.SaveUserAlreadyExists;
             }
 
-            returnModel.Message = GeneralMessages.SaveConsumerSuccess;
-
-
             return returnModel;
+
         }
 
     }

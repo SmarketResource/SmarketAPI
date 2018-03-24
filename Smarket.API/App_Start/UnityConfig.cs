@@ -22,7 +22,7 @@ namespace Smarket.API.App_Start
             //DbContext
             container.RegisterType<IDbContext, SmarketContext>();
 
-            //Repositories
+            #region Repositories
             container.RegisterType<IRepositoryBase<EntityBase>, RepositoryBase<EntityBase>>();
             container.RegisterType<IRepositoryUser,             RepositoryUser>();
             container.RegisterType<IRepositoryBase<TypeUsers>,  RepositoryBase<TypeUsers>>();
@@ -40,8 +40,10 @@ namespace Smarket.API.App_Start
             container.RegisterType<IRepositoryState,            RepositoryState>();
             container.RegisterType<IRepositoryBrand,            RepositoryBrand>();
             container.RegisterType<IRepositoryCategory,         RepositoryCategory>();
+            container.RegisterType<IRepositorySubCategory,      RepositorySubCategory>();
+            #endregion
 
-            //Services
+            #region Services
             container.RegisterType<IServiceBase<EntityBase>,    ServiceBase<EntityBase>>();
             container.RegisterType<IServiceUser,                ServiceUser>();
             container.RegisterType<IServiceLogin,               ServiceLogin>();
@@ -53,7 +55,9 @@ namespace Smarket.API.App_Start
             container.RegisterType<IServiceCity,                ServiceCity>();
             container.RegisterType<IServiceState,               ServiceState>();
             container.RegisterType<IServiceBrand,               ServiceBrand>();
-            container.RegisterType<IServiceCategory,            ServiceCategory>();    
+            container.RegisterType<IServiceCategory,            ServiceCategory>();
+            container.RegisterType<IServiceSubCategory,         ServiceSubCategory>();
+            #endregion
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
             return GlobalConfiguration.Configuration.DependencyResolver;

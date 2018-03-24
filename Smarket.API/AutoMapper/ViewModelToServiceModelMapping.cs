@@ -90,8 +90,12 @@ namespace Smarket.API.AutoMapper
             CreateMap<SaveCategoryCommand, Categories>()
                 .ForMember(dest => dest.Description, to => to.MapFrom(src => src.Description));
 
+            CreateMap<SaveSubCategoryCommand, SubCategories>()
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
+                .ForMember(dest => dest.CategoryId,             to => to.MapFrom(src => src.CategoryId));
+
             CreateMap<SaveBrandCommand, Brands>()
-                .ForMember(dest => dest.Description, to => to.MapFrom(src => src.Description));
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description));
         }
     }
 }

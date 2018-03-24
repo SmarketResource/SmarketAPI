@@ -71,6 +71,7 @@
     <Compile Include="Services\ServiceMarket.cs" />
     <Compile Include="Services\ServicePhone.cs" />
     <Compile Include="Services\ServiceState.cs" />
+    <Compile Include="Services\ServiceSubCategory.cs" />
     <Compile Include="Services\ServiceUser.cs" />
   </ItemGroup>
   <ItemGroup>

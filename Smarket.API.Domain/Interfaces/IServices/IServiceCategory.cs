@@ -12,7 +12,7 @@ namespace Smarket.API.Domain.Interfaces.IServices
 
         CategoryReturn GetCategoryByDescription(string description);
 
-        BaseReturn SaveCategory(Categories category);
+        BaseReturn SaveCategory(Categories newCategory);
 
     }
 }

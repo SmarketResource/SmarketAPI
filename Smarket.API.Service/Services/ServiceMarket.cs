@@ -2,6 +2,7 @@
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
+using Smarket.API.Resources;
 using System.Linq;
 using System.Transactions;
 
@@ -32,33 +33,46 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public BaseReturn SaveMarket(Market market)
+        public BaseReturn SaveMarket(Market newMarket)
         {
             var returnModel = new BaseReturn();
 
+            var marketExists = _repositoryMarket.Get(m => m.FantasyName == newMarket.FantasyName);
 
-            using (var transaction = new TransactionScope())
+            if (marketExists == null)
             {
 
-                _repositoryMarket.AddMarket(market);
+                using (var transaction = new TransactionScope())
+                {
 
-                _repositoryMarket.SaveChanges();
+                    _repositoryMarket.AddMarket(newMarket);
 
-                var Employee = market.MarketEmployee.FirstOrDefault();
+                    _repositoryMarket.SaveChanges();
 
-                var EmployeeUser = Employee.Users;
+                    var Employee = newMarket.MarketEmployee.FirstOrDefault();
 
-                var MarketAddress = market.Address;
+                    var EmployeeUser = Employee.Users;
 
-                _repositoryAddress.AddAddress(MarketAddress);
+                    var MarketAddress = newMarket.Address;
 
-                _repositoryUser.AddUser(EmployeeUser);
+                    _repositoryAddress.AddAddress(MarketAddress);
 
-                _repositoryPhone.AddPhone(Employee.Phones.FirstOrDefault());
+                    _repositoryUser.AddUser(EmployeeUser);
 
-                _repositoryMarket.SaveChanges();
+                    _repositoryPhone.AddPhone(Employee.Phones.FirstOrDefault());
 
-                transaction.Complete();
+                    _repositoryMarket.SaveChanges();
+
+                    transaction.Complete();
+                }
+
+                returnModel.Message = GeneralMessagesEN.SaveMarketSuccess;
+
+            }
+            else
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.SaveMarketAlreadyExists;
             }
 
             return returnModel;

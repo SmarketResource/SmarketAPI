@@ -67,6 +67,7 @@
     <Compile Include="Repositories\RepositoryMarket.cs" />
     <Compile Include="Repositories\RepositoryPhone.cs" />
     <Compile Include="Repositories\RepositoryState.cs" />
+    <Compile Include="Repositories\RepositorySubCategory.cs" />
     <Compile Include="Repositories\RepositoryUser.cs" />
   </ItemGroup>
   <ItemGroup>

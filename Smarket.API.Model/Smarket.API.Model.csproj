@@ -60,6 +60,7 @@
     <Compile Include="Commands\SaveConsumerCommand.cs" />
     <Compile Include="Commands\SaveMarketCommand.cs" />
     <Compile Include="Commands\SavePhoneCommand.cs" />
+    <Compile Include="Commands\SaveSubCategoryCommand.cs" />
     <Compile Include="Commands\SaveUserCommand.cs" />
     <Compile Include="CommomModels\BrandModel.cs" />
     <Compile Include="CommomModels\CategoryModel.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="CommomModels\MarketModel.cs" />
     <Compile Include="CommomModels\PhoneModel.cs" />
     <Compile Include="CommomModels\StateModel.cs" />
+    <Compile Include="CommomModels\SubCategoryModel.cs" />
     <Compile Include="CommomModels\TypePhoneModel.cs" />
     <Compile Include="CommomModels\UserModel.cs" />
     <Compile Include="EntityConfig\AddressConfig.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="EntityConfig\MarketConfig.cs" />
     <Compile Include="EntityConfig\MarketEmployeeConfig.cs" />
     <Compile Include="EntityConfig\StatesConfig.cs" />
+    <Compile Include="EntityConfig\SubCategoriesConfig.cs" />
     <Compile Include="EntityModel\Address.cs" />
     <Compile Include="EntityModel\Brands.cs" />
     <Compile Include="EntityModel\Categories.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="EntityModel\Phones.cs" />
     <Compile Include="Context\SmarketContext.cs" />
     <Compile Include="EntityModel\States.cs" />
+    <Compile Include="EntityModel\SubCategories.cs" />
     <Compile Include="EntityModel\TypePhone.cs" />
     <Compile Include="EntityModel\TypeUsers.cs" />
     <Compile Include="EntityModel\Users.cs" />
@@ -122,6 +126,7 @@
     <Compile Include="Returns\MarketReturn.cs" />
     <Compile Include="Returns\SaveConsumerReturn.cs" />
     <Compile Include="Returns\StateReturn.cs" />
+    <Compile Include="Returns\SubCategoryReturn.cs" />
     <Compile Include="Returns\UserReturn.cs" />
   </ItemGroup>
   <ItemGroup>

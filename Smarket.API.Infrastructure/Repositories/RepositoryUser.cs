@@ -4,7 +4,6 @@ using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

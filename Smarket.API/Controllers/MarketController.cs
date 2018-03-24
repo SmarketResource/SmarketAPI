@@ -88,8 +88,16 @@ namespace Smarket.API.Controllers
                 market.Address  = Mapper.Map<SaveMarketCommand, Address>(command);
 
                 returnModel = _serviceMarket.SaveMarket(market);
-                returnModel.Message = GeneralMessages.SaveMarketSuccess;
 
+                if (returnModel.Error)
+                {
+                    return new ResponseMessageResult(
+                        Request.CreateErrorResponse(
+                            (HttpStatusCode.BadRequest),
+                            new HttpError(returnModel.Message)
+                        )
+                    );
+                }
             }
             catch (Exception ex)
             {

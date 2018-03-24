@@ -277,6 +277,78 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Erro ao receber lista de subcategorias.
+        /// </summary>
+        public static string GetSubCategoriesError {
+            get {
+                return ResourceManager.GetString("GetSubCategoriesError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lista de subcategorias com sucesso.
+        /// </summary>
+        public static string GetSubCategoriesSuccess {
+            get {
+                return ResourceManager.GetString("GetSubCategoriesSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao buscar subcategoria(s) por categoria.
+        /// </summary>
+        public static string GetSubCategoryByCategoryError {
+            get {
+                return ResourceManager.GetString("GetSubCategoryByCategoryError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcategoria(s) recebida(s) com sucesso.
+        /// </summary>
+        public static string GetSubCategoryByCategorySuccess {
+            get {
+                return ResourceManager.GetString("GetSubCategoryByCategorySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao buscar subcategoria por descrição.
+        /// </summary>
+        public static string GetSubCategoryByDescriptionError {
+            get {
+                return ResourceManager.GetString("GetSubCategoryByDescriptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcategoria recebida com sucesso.
+        /// </summary>
+        public static string GetSubCategoryByDescriptionSuccess {
+            get {
+                return ResourceManager.GetString("GetSubCategoryByDescriptionSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao buscar subcategoria por id.
+        /// </summary>
+        public static string GetSubCategoryByIdError {
+            get {
+                return ResourceManager.GetString("GetSubCategoryByIdError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcategoria recebida com sucesso.
+        /// </summary>
+        public static string GetSubCategoryByIdSuccess {
+            get {
+                return ResourceManager.GetString("GetSubCategoryByIdSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro ao receber lista de usúarios.
         /// </summary>
         public static string GetUsersError {
@@ -349,6 +421,15 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Erro, estabelecimento consumidor já existe na base.
+        /// </summary>
+        public static string SaveCommerceAlreadyExists {
+            get {
+                return ResourceManager.GetString("SaveCommerceAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro ao salvar estabelecimento consumidor.
         /// </summary>
         public static string SaveCommerceError {
@@ -385,6 +466,15 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Erro, mercado já existe na base.
+        /// </summary>
+        public static string SaveMarketAlreadyExists {
+            get {
+                return ResourceManager.GetString("SaveMarketAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro ao salvar mercado.
         /// </summary>
         public static string SaveMarketError {
@@ -417,6 +507,33 @@ namespace Smarket.API.Resources {
         public static string SavePhoneSuccess {
             get {
                 return ResourceManager.GetString("SavePhoneSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro, Subcategoria já existe na base.
+        /// </summary>
+        public static string SaveSubCategoryAlreadyExists {
+            get {
+                return ResourceManager.GetString("SaveSubCategoryAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao salvar subcategoria.
+        /// </summary>
+        public static string SaveSubCategoryError {
+            get {
+                return ResourceManager.GetString("SaveSubCategoryError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subcategoria salva com sucesso.
+        /// </summary>
+        public static string SaveSubCategorySuccess {
+            get {
+                return ResourceManager.GetString("SaveSubCategorySuccess", resourceCulture);
             }
         }
         

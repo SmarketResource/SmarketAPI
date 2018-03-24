@@ -2,6 +2,7 @@
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
+using Smarket.API.Resources;
 using System;
 using System.Transactions;
 
@@ -44,21 +45,34 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public BaseReturn SaveBrand(Brands brand)
+        public BaseReturn SaveBrand(Brands newBrand)
         {
             var returnModel = new BaseReturn();
 
-            using (var transaction = new TransactionScope())
+            var brandExists = _repositoryBrand.Get(s => s.Description == newBrand.Description);
+
+            if (brandExists == null)
             {
+                using (var transaction = new TransactionScope())
+                {
 
-                _repositoryBrand.AddBrand(brand);
+                    _repositoryBrand.AddBrand(newBrand);
 
-                _repositoryBrand.SaveChanges();
+                    _repositoryBrand.SaveChanges();
 
-                transaction.Complete();
+                    transaction.Complete();
+                }
+                returnModel.Message = GeneralMessagesEN.SaveBrandSuccess;
+
+            }
+            else
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.SaveBrandAlreadyExists;
             }
 
             return returnModel;
+
         }
 
     }

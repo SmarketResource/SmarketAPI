@@ -5,10 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Smarket.API.Model.EntityModel
 {
-    [Table("Categories")]
-    public partial class Categories : EntityBase 
+    [Table("SubCategories")]
+    public partial class SubCategories : EntityBase
     {
+
         [Key]
+        public Guid SubCategoryId { get; set; }
+
         public Guid CategoryId { get; set; }
 
         [Required]
@@ -16,5 +19,9 @@ namespace Smarket.API.Model.EntityModel
         public string Description { get; set; }
 
         public string Image { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual Categories Categories { get; set; }
+
     }
 }
