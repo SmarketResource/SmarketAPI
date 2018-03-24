@@ -22,14 +22,14 @@ namespace Smarket.API.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GeneralMessagesPT {
+    public class GeneralMessagesEN {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GeneralMessagesPT() {
+        internal GeneralMessagesEN() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Smarket.API.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Smarket.API.Resources.GeneralMessagesPT", typeof(GeneralMessagesPT).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Smarket.API.Resources.GeneralMessagesEN", typeof(GeneralMessagesEN).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao buscar marca por descrição.
+        ///   Looks up a localized string similar to Error fetching brand by description.
         /// </summary>
         public static string GetBrandByDescriptionError {
             get {
@@ -70,7 +70,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Marca recebida com sucesso.
+        ///   Looks up a localized string similar to Brand successfully received.
         /// </summary>
         public static string GetBrandByDescriptionSuccess {
             get {
@@ -79,7 +79,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao buscar marca por id.
+        ///   Looks up a localized string similar to Error fetching brand by id.
         /// </summary>
         public static string GetBrandByIdError {
             get {
@@ -88,7 +88,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Marca recebida com sucesso.
+        ///   Looks up a localized string similar to Brand successfully received.
         /// </summary>
         public static string GetBrandByIdSuccess {
             get {
@@ -97,7 +97,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de marcas.
+        ///   Looks up a localized string similar to Error receiving list of brands.
         /// </summary>
         public static string GetBrandsError {
             get {
@@ -106,7 +106,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de marcas recebidas com sucesso.
+        ///   Looks up a localized string similar to List of brands successfully received.
         /// </summary>
         public static string GetBrandsSuccess {
             get {
@@ -115,7 +115,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de categorias.
+        ///   Looks up a localized string similar to Error receiving list of categories.
         /// </summary>
         public static string GetCategoriesError {
             get {
@@ -124,7 +124,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de categorias recebidas com sucesso.
+        ///   Looks up a localized string similar to List of categories successfully received.
         /// </summary>
         public static string GetCategoriesSuccess {
             get {
@@ -133,7 +133,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao buscar categoria por descrição.
+        ///   Looks up a localized string similar to Error fetching category by description.
         /// </summary>
         public static string GetCategoryByDescriptionError {
             get {
@@ -142,7 +142,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Categoria recebida com sucesso.
+        ///   Looks up a localized string similar to Category successfully received.
         /// </summary>
         public static string GetCategoryByDescriptionSuccess {
             get {
@@ -151,7 +151,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao buscar categoria por Id.
+        ///   Looks up a localized string similar to Error fetching category by Id.
         /// </summary>
         public static string GetCategoryByIdError {
             get {
@@ -160,7 +160,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Categoria recebida com sucesso.
+        ///   Looks up a localized string similar to Category successfully received.
         /// </summary>
         public static string GetCategoryByIdSuccess {
             get {
@@ -169,7 +169,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de cidades.
+        ///   Looks up a localized string similar to Error receiving list of cities.
         /// </summary>
         public static string GetCitiesError {
             get {
@@ -178,7 +178,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de cidades recebidas com sucesso.
+        ///   Looks up a localized string similar to List of cities successfully received.
         /// </summary>
         public static string GetCitiesSuccess {
             get {
@@ -187,7 +187,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de estabelecimentos consumidores.
+        ///   Looks up a localized string similar to Error receiving list of commerces.
         /// </summary>
         public static string GetCommercesError {
             get {
@@ -196,7 +196,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de estabelecimentos consumidores recebida com sucesso.
+        ///   Looks up a localized string similar to List of commerces successfully received.
         /// </summary>
         public static string GetCommercesSuccess {
             get {
@@ -205,7 +205,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de consumidores.
+        ///   Looks up a localized string similar to Error receiving list of consumers.
         /// </summary>
         public static string GetConsumersError {
             get {
@@ -214,7 +214,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de consumidores recebida com sucesso.
+        ///   Looks up a localized string similar to List of consumers successfully received.
         /// </summary>
         public static string GetConsumersSuccess {
             get {
@@ -223,7 +223,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao gerar token.
+        ///   Looks up a localized string similar to Error generating token.
         /// </summary>
         public static string GetGeneratedTokenError {
             get {
@@ -232,7 +232,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Token gerado com sucesso.
+        ///   Looks up a localized string similar to Successfully generated Token.
         /// </summary>
         public static string GetGeneratedTokenSuccess {
             get {
@@ -241,7 +241,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de mercados.
+        ///   Looks up a localized string similar to Error receiving list of markets.
         /// </summary>
         public static string GetMarketsError {
             get {
@@ -250,7 +250,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de mercados recebida com sucesso.
+        ///   Looks up a localized string similar to List of markets successfully received.
         /// </summary>
         public static string GetMarketsSuccess {
             get {
@@ -259,7 +259,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de estados.
+        ///   Looks up a localized string similar to Error receiving states list.
         /// </summary>
         public static string GetStatesError {
             get {
@@ -268,7 +268,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de estados recebidas com sucesso.
+        ///   Looks up a localized string similar to List of successfully received states.
         /// </summary>
         public static string GetStatesSuccess {
             get {
@@ -277,7 +277,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao receber lista de usúarios.
+        ///   Looks up a localized string similar to Error receiving list of users.
         /// </summary>
         public static string GetUsersError {
             get {
@@ -286,7 +286,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lista de usúarios recebida com sucesso.
+        ///   Looks up a localized string similar to List of users successfully received.
         /// </summary>
         public static string GetUsersSuccess {
             get {
@@ -295,7 +295,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro, marca já existe na base.
+        ///   Looks up a localized string similar to Error, brand already exists in base.
         /// </summary>
         public static string SaveBrandAlreadyExists {
             get {
@@ -304,7 +304,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar marca.
+        ///   Looks up a localized string similar to Error saving branding.
         /// </summary>
         public static string SaveBrandError {
             get {
@@ -313,7 +313,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Marca salva com sucesso.
+        ///   Looks up a localized string similar to Brand saved successfully.
         /// </summary>
         public static string SaveBrandSuccess {
             get {
@@ -322,7 +322,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro, categoria já existe na base.
+        ///   Looks up a localized string similar to Error, category already exists in base.
         /// </summary>
         public static string SaveCategoryAlreadyExists {
             get {
@@ -331,7 +331,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar categoria.
+        ///   Looks up a localized string similar to Error saving category.
         /// </summary>
         public static string SaveCategoryError {
             get {
@@ -340,7 +340,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Categoria salva com sucesso.
+        ///   Looks up a localized string similar to Category saved successfully.
         /// </summary>
         public static string SaveCategorySuccess {
             get {
@@ -349,7 +349,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar estabelecimento consumidor.
+        ///   Looks up a localized string similar to Error saving commerce.
         /// </summary>
         public static string SaveCommerceError {
             get {
@@ -358,7 +358,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Estabelecimento consumidor salvo com sucesso.
+        ///   Looks up a localized string similar to Commerce saved successfully.
         /// </summary>
         public static string SaveCommerceSuccess {
             get {
@@ -367,7 +367,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar consumidor.
+        ///   Looks up a localized string similar to Error saving consumer.
         /// </summary>
         public static string SaveConsumerError {
             get {
@@ -376,7 +376,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Consumidor salvo com sucesso.
+        ///   Looks up a localized string similar to Consumer saved successfully.
         /// </summary>
         public static string SaveConsumerSuccess {
             get {
@@ -385,7 +385,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar mercado.
+        ///   Looks up a localized string similar to Error saving market.
         /// </summary>
         public static string SaveMarketError {
             get {
@@ -394,7 +394,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mercado salvo com sucesso.
+        ///   Looks up a localized string similar to Market saved successfully.
         /// </summary>
         public static string SaveMarketSuccess {
             get {
@@ -403,7 +403,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar telefone.
+        ///   Looks up a localized string similar to Error saving phone.
         /// </summary>
         public static string SavePhoneError {
             get {
@@ -412,7 +412,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telefone salvo com sucesso.
+        ///   Looks up a localized string similar to Phone saved successfully.
         /// </summary>
         public static string SavePhoneSuccess {
             get {
@@ -421,7 +421,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro, usúario já existe na base.
+        ///   Looks up a localized string similar to Error, user already exists in base.
         /// </summary>
         public static string SaveUserAlreadyExists {
             get {
@@ -430,7 +430,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erro ao salvar usúario.
+        ///   Looks up a localized string similar to Error saving user.
         /// </summary>
         public static string SaveUserError {
             get {
@@ -439,7 +439,7 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Usúario salvo com sucesso.
+        ///   Looks up a localized string similar to User saved successfully.
         /// </summary>
         public static string SaveUserSuccess {
             get {

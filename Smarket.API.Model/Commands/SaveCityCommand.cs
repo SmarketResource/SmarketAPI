@@ -1,11 +1,4 @@
-﻿using Smarket.API.Model.CommomModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Smarket.API.Model.Commands
+﻿namespace Smarket.API.Model.Commands
 {
     public class SaveCityCommand
     {

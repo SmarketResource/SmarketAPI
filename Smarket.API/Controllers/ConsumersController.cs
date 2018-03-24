@@ -8,6 +8,9 @@ using AutoMapper;
 using Smarket.API.Model.Context;
 using System.Collections.Generic;
 using System.Web.Http.Description;
+using System.Web.Http.Results;
+using System.Net.Http;
+using System.Net;
 
 namespace Smarket.API.Controllers
 {
@@ -51,7 +54,12 @@ namespace Smarket.API.Controllers
                 returnModel.Message = GeneralMessages.GetConsumersError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
 
-                return Ok(returnModel);
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
             return Ok(returnModel);
         }
@@ -85,6 +93,13 @@ namespace Smarket.API.Controllers
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.SaveConsumerError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
 
             return Ok(returnModel);

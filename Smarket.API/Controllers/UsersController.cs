@@ -5,8 +5,11 @@ using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.Results;
 
 namespace Smarket.API.Controllers
 {
@@ -48,6 +51,13 @@ namespace Smarket.API.Controllers
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.GetUsersError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
             
             return Ok(returnModel);
@@ -76,6 +86,13 @@ namespace Smarket.API.Controllers
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.SaveUserError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
 
             return Ok(returnModel);

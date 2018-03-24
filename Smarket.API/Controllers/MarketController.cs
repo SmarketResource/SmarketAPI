@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.Results;
 using AutoMapper;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
@@ -51,7 +54,12 @@ namespace Smarket.API.Controllers
                 returnModel.Message = GeneralMessages.GetMarketsError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
 
-                return Ok(returnModel);
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
 
             return Ok(returnModel);
@@ -88,6 +96,13 @@ namespace Smarket.API.Controllers
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.SaveMarketError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
 
             return Ok(returnModel);

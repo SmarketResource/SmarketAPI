@@ -1,10 +1,10 @@
-﻿using Smarket.API.Domain.Interfaces.IServices;
+﻿using AutoMapper;
+using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Model.Commands;
+using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 
@@ -27,6 +27,34 @@ namespace Smarket.API.Controllers
         {
             _serviceBrand = serviceBrand;
             _serviceLog = serviceLog;
+        }
+
+        /// <summary>
+        /// Save a Brand
+        /// </summary>
+        /// <param name="command">Brands data</param>
+        /// <remarks>Return a message if success or failed</remarks>
+        [HttpPost]
+        [Authorize]
+        public IHttpActionResult SaveBrand(SaveBrandCommand command)
+        {
+            var returnModel = new BaseReturn();
+
+            try
+            {
+                var brand = Mapper.Map<SaveBrandCommand, Brands>(command);
+
+                returnModel = _serviceBrand.SaveBrand(brand);
+
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessages.SaveUserError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+            }
+
+            return Ok(returnModel);
         }
 
         /// <summary>
@@ -62,7 +90,7 @@ namespace Smarket.API.Controllers
         [HttpGet]
         [Authorize]
         [ResponseType(typeof(BrandReturn))]
-        [Route("Brands/GetBrandById/{id}")]
+        [Route("api/Brands/GetBrandById/{id}")]
         public IHttpActionResult GetBrandById(Guid id)
         {
             var returnModel = new BrandReturn();
@@ -89,7 +117,7 @@ namespace Smarket.API.Controllers
         [HttpGet]
         [Authorize]
         [ResponseType(typeof(BrandReturn))]
-        [Route("Brands/GetBrandByDescription/{description}")]
+        [Route("api/Brands/GetBrandByDescription/{description}")]
         public IHttpActionResult GetBrandByDescription(string description)
         {
             var returnModel = new BrandReturn();

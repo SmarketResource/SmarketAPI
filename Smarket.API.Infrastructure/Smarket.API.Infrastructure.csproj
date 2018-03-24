@@ -58,6 +58,7 @@
     <Compile Include="Repositories\RepositoryAddress.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\RepositoryBrand.cs" />
+    <Compile Include="Repositories\RepositoryCategory.cs" />
     <Compile Include="Repositories\RepositoryCity.cs" />
     <Compile Include="Repositories\RepositoryCommerce.cs" />
     <Compile Include="Repositories\RepositoryConsumer.cs" />

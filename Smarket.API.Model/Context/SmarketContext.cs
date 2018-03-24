@@ -30,6 +30,7 @@ namespace Smarket.API.Model.Context
         public virtual IDbSet<States>                   States                  { get; set; }
         public virtual IDbSet<Address>                  Address                 { get; set; }
         public virtual IDbSet<Brands>                   Brands                  { get; set; }
+        public virtual IDbSet<Categories>               Categories              { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -55,7 +56,7 @@ namespace Smarket.API.Model.Context
             modelBuilder.Configurations.Add(new CitiesConfig());
             modelBuilder.Configurations.Add(new AddressConfig());
             modelBuilder.Configurations.Add(new BrandsConfig());
-
+            modelBuilder.Configurations.Add(new CategoriesConfig());
 
         }
     }

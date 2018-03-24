@@ -118,132 +118,132 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GetBrandByDescriptionError" xml:space="preserve">
-    <value>Erro ao buscar marca por descrição</value>
+    <value>Error fetching brand by description</value>
   </data>
   <data name="GetBrandByDescriptionSuccess" xml:space="preserve">
-    <value>Marca recebida com sucesso</value>
+    <value>Brand successfully received</value>
   </data>
   <data name="GetBrandByIdError" xml:space="preserve">
-    <value>Erro ao buscar marca por id</value>
+    <value>Error fetching brand by id</value>
   </data>
   <data name="GetBrandByIdSuccess" xml:space="preserve">
-    <value>Marca recebida com sucesso</value>
+    <value>Brand successfully received</value>
   </data>
   <data name="GetBrandsError" xml:space="preserve">
-    <value>Erro ao receber lista de marcas</value>
+    <value>Error receiving list of brands</value>
   </data>
   <data name="GetBrandsSuccess" xml:space="preserve">
-    <value>Lista de marcas recebidas com sucesso</value>
+    <value>List of brands successfully received</value>
   </data>
   <data name="GetCategoriesError" xml:space="preserve">
-    <value>Erro ao receber lista de categorias</value>
+    <value>Error receiving list of categories</value>
   </data>
   <data name="GetCategoriesSuccess" xml:space="preserve">
-    <value>Lista de categorias recebidas com sucesso</value>
+    <value>List of categories successfully received</value>
   </data>
   <data name="GetCategoryByDescriptionError" xml:space="preserve">
-    <value>Erro ao buscar categoria por descrição</value>
+    <value>Error fetching category by description</value>
   </data>
   <data name="GetCategoryByDescriptionSuccess" xml:space="preserve">
-    <value>Categoria recebida com sucesso</value>
+    <value>Category successfully received</value>
   </data>
   <data name="GetCategoryByIdError" xml:space="preserve">
-    <value>Erro ao buscar categoria por Id</value>
+    <value>Error fetching category by Id</value>
   </data>
   <data name="GetCategoryByIdSuccess" xml:space="preserve">
-    <value>Categoria recebida com sucesso</value>
+    <value>Category successfully received</value>
   </data>
   <data name="GetCitiesError" xml:space="preserve">
-    <value>Erro ao receber lista de cidades</value>
+    <value>Error receiving list of cities</value>
   </data>
   <data name="GetCitiesSuccess" xml:space="preserve">
-    <value>Lista de cidades recebidas com sucesso</value>
+    <value>List of cities successfully received</value>
   </data>
   <data name="GetCommercesError" xml:space="preserve">
-    <value>Erro ao receber lista de estabelecimentos consumidores</value>
+    <value>Error receiving list of commerces</value>
   </data>
   <data name="GetCommercesSuccess" xml:space="preserve">
-    <value>Lista de estabelecimentos consumidores recebida com sucesso</value>
+    <value>List of commerces successfully received</value>
   </data>
   <data name="GetConsumersError" xml:space="preserve">
-    <value>Erro ao receber lista de consumidores</value>
+    <value>Error receiving list of consumers</value>
   </data>
   <data name="GetConsumersSuccess" xml:space="preserve">
-    <value>Lista de consumidores recebida com sucesso</value>
+    <value>List of consumers successfully received</value>
   </data>
   <data name="GetGeneratedTokenError" xml:space="preserve">
-    <value>Erro ao gerar token</value>
+    <value>Error generating token</value>
   </data>
   <data name="GetGeneratedTokenSuccess" xml:space="preserve">
-    <value>Token gerado com sucesso</value>
+    <value>Successfully generated Token</value>
   </data>
   <data name="GetMarketsError" xml:space="preserve">
-    <value>Erro ao receber lista de mercados</value>
+    <value>Error receiving list of markets</value>
   </data>
   <data name="GetMarketsSuccess" xml:space="preserve">
-    <value>Lista de mercados recebida com sucesso</value>
+    <value>List of markets successfully received</value>
   </data>
   <data name="GetStatesError" xml:space="preserve">
-    <value>Erro ao receber lista de estados</value>
+    <value>Error receiving states list</value>
   </data>
   <data name="GetStatesSuccess" xml:space="preserve">
-    <value>Lista de estados recebidas com sucesso</value>
+    <value>List of successfully received states</value>
   </data>
   <data name="GetUsersError" xml:space="preserve">
-    <value>Erro ao receber lista de usúarios</value>
+    <value>Error receiving list of users</value>
   </data>
   <data name="GetUsersSuccess" xml:space="preserve">
-    <value>Lista de usúarios recebida com sucesso</value>
+    <value>List of users successfully received</value>
   </data>
   <data name="SaveBrandAlreadyExists" xml:space="preserve">
-    <value>Erro, marca já existe na base</value>
+    <value>Error, brand already exists in base</value>
   </data>
   <data name="SaveBrandError" xml:space="preserve">
-    <value>Erro ao salvar marca</value>
+    <value>Error saving branding</value>
   </data>
   <data name="SaveBrandSuccess" xml:space="preserve">
-    <value>Marca salva com sucesso</value>
+    <value>Brand saved successfully</value>
   </data>
   <data name="SaveCategoryAlreadyExists" xml:space="preserve">
-    <value>Erro, categoria já existe na base</value>
+    <value>Error, category already exists in base</value>
   </data>
   <data name="SaveCategoryError" xml:space="preserve">
-    <value>Erro ao salvar categoria</value>
+    <value>Error saving category</value>
   </data>
   <data name="SaveCategorySuccess" xml:space="preserve">
-    <value>Categoria salva com sucesso</value>
+    <value>Category saved successfully</value>
   </data>
   <data name="SaveCommerceError" xml:space="preserve">
-    <value>Erro ao salvar estabelecimento consumidor</value>
+    <value>Error saving commerce</value>
   </data>
   <data name="SaveCommerceSuccess" xml:space="preserve">
-    <value>Estabelecimento consumidor salvo com sucesso</value>
+    <value>Commerce saved successfully</value>
   </data>
   <data name="SaveConsumerError" xml:space="preserve">
-    <value>Erro ao salvar consumidor</value>
+    <value>Error saving consumer</value>
   </data>
   <data name="SaveConsumerSuccess" xml:space="preserve">
-    <value>Consumidor salvo com sucesso</value>
+    <value>Consumer saved successfully</value>
   </data>
   <data name="SaveMarketError" xml:space="preserve">
-    <value>Erro ao salvar mercado</value>
+    <value>Error saving market</value>
   </data>
   <data name="SaveMarketSuccess" xml:space="preserve">
-    <value>Mercado salvo com sucesso</value>
+    <value>Market saved successfully</value>
   </data>
   <data name="SavePhoneError" xml:space="preserve">
-    <value>Erro ao salvar telefone</value>
+    <value>Error saving phone</value>
   </data>
   <data name="SavePhoneSuccess" xml:space="preserve">
-    <value>Telefone salvo com sucesso</value>
+    <value>Phone saved successfully</value>
   </data>
   <data name="SaveUserAlreadyExists" xml:space="preserve">
-    <value>Erro, usúario já existe na base</value>
+    <value>Error, user already exists in base</value>
   </data>
   <data name="SaveUserError" xml:space="preserve">
-    <value>Erro ao salvar usúario</value>
+    <value>Error saving user</value>
   </data>
   <data name="SaveUserSuccess" xml:space="preserve">
-    <value>Usúario salvo com sucesso</value>
+    <value>User saved successfully</value>
   </data>
 </root>

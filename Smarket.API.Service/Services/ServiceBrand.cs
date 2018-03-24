@@ -3,10 +3,6 @@ using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Transactions;
 
 namespace Smarket.API.Service.Services

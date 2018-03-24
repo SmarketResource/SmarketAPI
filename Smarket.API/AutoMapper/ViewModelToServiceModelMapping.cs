@@ -87,6 +87,11 @@ namespace Smarket.API.AutoMapper
                 .ForMember(dest => dest.Longitude,              to => to.MapFrom(src => src.Longitude))
                 .ForMember(dest => dest.StateId,                to => to.MapFrom(src => src.StateId));
 
+            CreateMap<SaveCategoryCommand, Categories>()
+                .ForMember(dest => dest.Description, to => to.MapFrom(src => src.Description));
+
+            CreateMap<SaveBrandCommand, Brands>()
+                .ForMember(dest => dest.Description, to => to.MapFrom(src => src.Description));
         }
     }
 }

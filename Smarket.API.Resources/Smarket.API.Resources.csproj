@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneralMessagesEN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneralMessagesEN.resx</DependentUpon>
+    </Compile>
     <Compile Include="GeneralMessagesPT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -50,6 +55,10 @@
     <Compile Include="Utils\GeneralMessages.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GeneralMessagesEN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GeneralMessagesEN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeneralMessagesPT.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GeneralMessagesPT.Designer.cs</LastGenOutput>

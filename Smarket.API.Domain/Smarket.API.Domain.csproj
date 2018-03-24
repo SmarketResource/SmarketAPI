@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\IRepositories\IRepositoryAddress.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryBrand.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryCategory.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryCity.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryCommerce.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumer.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Interfaces\IServices\IServiceAuthorization.cs" />
     <Compile Include="Interfaces\IServices\IServiceBase.cs" />
     <Compile Include="Interfaces\IServices\IServiceBrand.cs" />
+    <Compile Include="Interfaces\IServices\IServiceCategory.cs" />
     <Compile Include="Interfaces\IServices\IServiceCity.cs" />
     <Compile Include="Interfaces\IServices\IServiceCommerce.cs" />
     <Compile Include="Interfaces\IServices\IServiceConsumer.cs" />

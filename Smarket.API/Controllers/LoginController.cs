@@ -5,6 +5,9 @@ using Smarket.API.Resources.Utils;
 using System.Web.Http;
 using Smarket.API.Domain.Interfaces.IServices;
 using System.Web.Http.Description;
+using System.Web.Http.Results;
+using System.Net.Http;
+using System.Net;
 
 namespace Smarket.API.Controllers
 {
@@ -46,6 +49,13 @@ namespace Smarket.API.Controllers
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessages.GetGeneratedTokenError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
             }
             return Ok(returnModel);
         }
