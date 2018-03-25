@@ -32,6 +32,7 @@ namespace Smarket.API.Model.Context
         public virtual IDbSet<Brands>                   Brands                  { get; set; }
         public virtual IDbSet<Categories>               Categories              { get; set; }
         public virtual IDbSet<SubCategories>            SubCategories           { get; set; }
+        public virtual IDbSet<Products>                 Products                { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -59,6 +60,7 @@ namespace Smarket.API.Model.Context
             modelBuilder.Configurations.Add(new BrandsConfig());
             modelBuilder.Configurations.Add(new CategoriesConfig());
             modelBuilder.Configurations.Add(new SubCategoriesConfig());
+            modelBuilder.Configurations.Add(new ProductsConfig());
 
         }
     }

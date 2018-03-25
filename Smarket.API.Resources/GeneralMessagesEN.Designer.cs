@@ -259,6 +259,96 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error fetching product by description.
+        /// </summary>
+        public static string GetProductByDescriptionError {
+            get {
+                return ResourceManager.GetString("GetProductByDescriptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product successfully received.
+        /// </summary>
+        public static string GetProductByDescriptionSuccess {
+            get {
+                return ResourceManager.GetString("GetProductByDescriptionSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching product by id.
+        /// </summary>
+        public static string GetProductByIdError {
+            get {
+                return ResourceManager.GetString("GetProductByIdError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product successfully received.
+        /// </summary>
+        public static string GetProductByIdSuccess {
+            get {
+                return ResourceManager.GetString("GetProductByIdSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching products by market.
+        /// </summary>
+        public static string GetProductsByMarketError {
+            get {
+                return ResourceManager.GetString("GetProductsByMarketError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products received successfully.
+        /// </summary>
+        public static string GetProductsByMarketSuccess {
+            get {
+                return ResourceManager.GetString("GetProductsByMarketSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching products by subcategory.
+        /// </summary>
+        public static string GetProductsBySubCategoryError {
+            get {
+                return ResourceManager.GetString("GetProductsBySubCategoryError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products received successfully.
+        /// </summary>
+        public static string GetProductsBySubCategorySuccess {
+            get {
+                return ResourceManager.GetString("GetProductsBySubCategorySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error receiving product list.
+        /// </summary>
+        public static string GetProductsError {
+            get {
+                return ResourceManager.GetString("GetProductsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of products received successfully.
+        /// </summary>
+        public static string GetProductsSuccess {
+            get {
+                return ResourceManager.GetString("GetProductsSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error receiving states list.
         /// </summary>
         public static string GetStatesError {
@@ -507,6 +597,33 @@ namespace Smarket.API.Resources {
         public static string SavePhoneSuccess {
             get {
                 return ResourceManager.GetString("SavePhoneSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, product already exists in base.
+        /// </summary>
+        public static string SaveProductAlreadyExists {
+            get {
+                return ResourceManager.GetString("SaveProductAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error saving product.
+        /// </summary>
+        public static string SaveProductError {
+            get {
+                return ResourceManager.GetString("SaveProductError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product saved successfully.
+        /// </summary>
+        public static string SaveProductSuccess {
+            get {
+                return ResourceManager.GetString("SaveProductSuccess", resourceCulture);
             }
         }
         

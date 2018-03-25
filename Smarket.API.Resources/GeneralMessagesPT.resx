@@ -183,6 +183,36 @@
   <data name="GetMarketsSuccess" xml:space="preserve">
     <value>Lista de mercados recebida com sucesso</value>
   </data>
+  <data name="GetProductByDescriptionError" xml:space="preserve">
+    <value>Erro ao buscar produto pela descrição</value>
+  </data>
+  <data name="GetProductByDescriptionSuccess" xml:space="preserve">
+    <value>Produto recebido com sucesso</value>
+  </data>
+  <data name="GetProductByIdError" xml:space="preserve">
+    <value>Erro ao buscar produto por id</value>
+  </data>
+  <data name="GetProductByIdSuccess" xml:space="preserve">
+    <value>Produto recebido com sucesso</value>
+  </data>
+  <data name="GetProductsByMarketError" xml:space="preserve">
+    <value>Erro ao buscar produto(s) por mercado</value>
+  </data>
+  <data name="GetProductsByMarketSuccess" xml:space="preserve">
+    <value>Produto(s) recebido(s) com sucesso</value>
+  </data>
+  <data name="GetProductsBySubCategoryError" xml:space="preserve">
+    <value>Erro ao buscar produto(s) por subcategoria</value>
+  </data>
+  <data name="GetProductsBySubCategorySuccess" xml:space="preserve">
+    <value>Produto(s) recebido(s) com sucesso</value>
+  </data>
+  <data name="GetProductsError" xml:space="preserve">
+    <value>Erro ao receber lista de produtos</value>
+  </data>
+  <data name="GetProductsSuccess" xml:space="preserve">
+    <value>Lista de produtos recebida com sucesso</value>
+  </data>
   <data name="GetStatesError" xml:space="preserve">
     <value>Erro ao receber lista de estados</value>
   </data>
@@ -266,6 +296,15 @@
   </data>
   <data name="SavePhoneSuccess" xml:space="preserve">
     <value>Telefone salvo com sucesso</value>
+  </data>
+  <data name="SaveProductAlreadyExists" xml:space="preserve">
+    <value>Erro, produto já existe na base</value>
+  </data>
+  <data name="SaveProductError" xml:space="preserve">
+    <value>Erro ao salvar produto</value>
+  </data>
+  <data name="SaveProductSuccess" xml:space="preserve">
+    <value>Produto salvo com sucesso</value>
   </data>
   <data name="SaveSubCategoryAlreadyExists" xml:space="preserve">
     <value>Erro, Subcategoria já existe na base</value>

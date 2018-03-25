@@ -88,7 +88,7 @@ namespace Smarket.API.AutoMapper
                 .ForMember(dest => dest.StateId,                to => to.MapFrom(src => src.StateId));
 
             CreateMap<SaveCategoryCommand, Categories>()
-                .ForMember(dest => dest.Description, to => to.MapFrom(src => src.Description));
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description));
 
             CreateMap<SaveSubCategoryCommand, SubCategories>()
                 .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
@@ -96,6 +96,11 @@ namespace Smarket.API.AutoMapper
 
             CreateMap<SaveBrandCommand, Brands>()
                 .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description));
+
+            CreateMap<SaveProductCommand, Products>()
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
+                .ForMember(dest => dest.MarketId,               to => to.MapFrom(src => src.MarketId))
+                .ForMember(dest => dest.SubCategoryId,          to => to.MapFrom(src => src.SubCategoryId));
         }
     }
 }

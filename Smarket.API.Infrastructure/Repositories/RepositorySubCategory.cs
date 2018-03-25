@@ -21,10 +21,10 @@ namespace Smarket.API.Infrastructure.Repositories
             _context = (SmarketContext)context;
         }
 
-        public SubCategories AddSubCategory(SubCategories subCategory)
+        public SubCategories AddSubCategory(SubCategories newSubCategory)
         {
-            _context.SubCategories.Add(subCategory);
-            return subCategory;
+            _context.SubCategories.Add(newSubCategory);
+            return newSubCategory;
         }
 
         public SubCategoryReturn GetSubCategories()

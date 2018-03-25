@@ -8,9 +8,11 @@ namespace Smarket.API.Model.CommomModels
 {
     public class BrandModel
     {
-        public Guid BrandId { get; set; }
-        public string Description { get; set; }
-        public string Logo { get; set; }
+        public Guid BrandId         { get; set; }
+
+        public string Description   { get; set; }
+
+        public string Logo          { get; set; }
 
     }
 }

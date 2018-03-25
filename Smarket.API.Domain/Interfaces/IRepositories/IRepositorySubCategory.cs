@@ -15,7 +15,7 @@ namespace Smarket.API.Domain.Interfaces.IRepositories
 
         SubCategoryReturn GetSubCategoryByCategory(Guid categoryId);
 
-        SubCategories AddSubCategory(SubCategories subCategory);
+        SubCategories AddSubCategory(SubCategories newSubCategory);
 
     }
 }

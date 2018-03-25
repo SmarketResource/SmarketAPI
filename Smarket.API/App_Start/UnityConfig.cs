@@ -41,6 +41,7 @@ namespace Smarket.API.App_Start
             container.RegisterType<IRepositoryBrand,            RepositoryBrand>();
             container.RegisterType<IRepositoryCategory,         RepositoryCategory>();
             container.RegisterType<IRepositorySubCategory,      RepositorySubCategory>();
+            container.RegisterType<IRepositoryProduct,          RepositoryProduct>();
             #endregion
 
             #region Services
@@ -57,6 +58,7 @@ namespace Smarket.API.App_Start
             container.RegisterType<IServiceBrand,               ServiceBrand>();
             container.RegisterType<IServiceCategory,            ServiceCategory>();
             container.RegisterType<IServiceSubCategory,         ServiceSubCategory>();
+            container.RegisterType<IServiceProduct,             ServiceProduct>();
             #endregion
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
