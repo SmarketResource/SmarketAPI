@@ -15,6 +15,8 @@ namespace Smarket.API.Model.EntityModel
 
         public Guid MarketId { get; set; }
 
+        public Guid BrandId { get; set; }
+
         [Required]
         [StringLength(50)]
         public string Description { get; set; }
@@ -26,6 +28,9 @@ namespace Smarket.API.Model.EntityModel
 
         [ForeignKey("MarketId")]
         public virtual Market Market { get; set; }
+
+        [ForeignKey("BrandId")]
+        public virtual Brands Brand { get; set; }
 
     }
 }

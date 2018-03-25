@@ -179,7 +179,7 @@ namespace Smarket.API.Controllers
         }
 
         /// <summary>
-        /// Return a product by subcategory
+        /// Return a list of products by subcategory
         /// </summary>
         /// <remarks>Return a product</remarks>
         [HttpGet]
@@ -213,7 +213,7 @@ namespace Smarket.API.Controllers
         }
 
         /// <summary>
-        /// Return a product by market
+        /// Return a list of products by market
         /// </summary>
         /// <remarks>Return a product</remarks>
         [HttpGet]
@@ -233,6 +233,40 @@ namespace Smarket.API.Controllers
             {
                 returnModel.Error = true;
                 returnModel.Message = GeneralMessagesEN.GetProductsByMarketError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
+            }
+
+            return Ok(returnModel);
+        }
+
+        /// <summary>
+        /// Return a list of products by brand
+        /// </summary>
+        /// <remarks>Return a product</remarks>
+        [HttpGet]
+        [Authorize]
+        [ResponseType(typeof(ProductReturn))]
+        [Route("api/Products/GetProductsByBrand/{brandId}")]
+        public IHttpActionResult GetProductsByBrand(Guid brandId)
+        {
+            var returnModel = new ProductReturn();
+
+            try
+            {
+                returnModel = _serviceProduct.GetProductsByBrand(brandId);
+                returnModel.Message = GeneralMessagesEN.GetProductByBrandSuccess;
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.GetProductByBrandError + " : " + ex.Message;
                 _serviceLog.SaveLog(returnModel.Message);
 
                 return new ResponseMessageResult(

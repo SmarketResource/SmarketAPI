@@ -17,6 +17,8 @@ namespace Smarket.API.Domain.Interfaces.IServices
 
         ProductReturn GetProductsBySubCategory(Guid subCategoryId);
 
+        ProductReturn GetProductsByBrand(Guid brandId);
+
         BaseReturn SaveProduct(Products newProduct);
 
     }

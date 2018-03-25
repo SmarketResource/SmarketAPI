@@ -27,6 +27,15 @@ namespace Smarket.API.Infrastructure.Repositories
             return newProduct;
         }
 
+        public ProductReturn GetProductsByBrand(Guid brandId)
+        {
+            var products = _context.Products.Where(p => p.BrandId == brandId).ToList();
+
+            var returnModel = new ProductReturn { Products = Mapper.Map<List<Products>, List<ProductModel>>(products) };
+
+            return returnModel;
+        }
+
         public ProductReturn GetProductByDescription(string description)
         {
             var products = _context.Products.Where(p => p.Description == description).ToList();
@@ -71,5 +80,6 @@ namespace Smarket.API.Infrastructure.Repositories
 
             return returnModel;
         }
+
     }
 }

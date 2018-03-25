@@ -183,6 +183,12 @@
   <data name="GetMarketsSuccess" xml:space="preserve">
     <value>Lista de mercados recebida com sucesso</value>
   </data>
+  <data name="GetProductByBrandError" xml:space="preserve">
+    <value>Erro ao buscar produto(s) pela marca</value>
+  </data>
+  <data name="GetProductByBrandSuccess" xml:space="preserve">
+    <value>Produto(s) recebido com sucesso</value>
+  </data>
   <data name="GetProductByDescriptionError" xml:space="preserve">
     <value>Erro ao buscar produto pela descrição</value>
   </data>

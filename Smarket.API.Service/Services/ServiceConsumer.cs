@@ -38,7 +38,7 @@ namespace Smarket.API.Service.Services
 
             newConsumer.Users.TypeUserId   = 2;
 
-            var consumerExists = _repositoryUser.Get(s => s.UserLogin == newConsumer.Users.UserLogin);
+            var consumerExists = _repositoryUser.Get(s => s.UserLogin.ToUpper() == newConsumer.Users.UserLogin.ToUpper());
 
             if (consumerExists == null)
             {

@@ -14,6 +14,8 @@ namespace Smarket.API.Model.EntityConfig
             Property(x => x.Image).IsOptional();
             HasRequired(x => x.Market);
             HasRequired(x => x.SubCategories);
+            HasRequired(x => x.Brand);
+
         }
     }
 }

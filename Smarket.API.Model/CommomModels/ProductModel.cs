@@ -11,6 +11,8 @@ namespace Smarket.API.Model.CommomModels
 
         public Guid     MarketId        { get; set; }
 
+        public Guid     BrandId         { get; set; }
+
         public string   Description     { get; set; }
 
         public string   Image           { get; set; }

@@ -74,6 +74,7 @@ namespace Smarket.API.AutoMapper
                 .ForMember(dest => dest.ProductId,              to => to.MapFrom(src => src.ProductId))
                 .ForMember(dest => dest.SubCategoryId,          to => to.MapFrom(src => src.SubCategoryId))
                 .ForMember(dest => dest.MarketId,               to => to.MapFrom(src => src.MarketId))
+                .ForMember(dest => dest.BrandId,                to => to.MapFrom(src => src.BrandId))
                 .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
                 .ForMember(dest => dest.Image,                  to => to.MapFrom(src => src.Image));
         }

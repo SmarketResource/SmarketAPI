@@ -17,6 +17,8 @@ namespace Smarket.API.Domain.Interfaces.IRepositories
 
         ProductReturn GetProductsBySubCategory(Guid subCategoryId);
 
+        ProductReturn GetProductsByBrand(Guid brandId);
+
         Products AddProduct(Products newProduct);
 
     }

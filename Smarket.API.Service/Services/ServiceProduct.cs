@@ -22,7 +22,7 @@ namespace Smarket.API.Service.Services
         {
             var returnModel = new BaseReturn();
 
-            var productExists = _repositoryProduct.Get(s => s.Description.ToUpper() == newProduct.Description.ToUpper());
+            var productExists = _repositoryProduct.Get(s => s.Description.ToUpper() == newProduct.Description.ToUpper() && s.MarketId == newProduct.MarketId);
 
             if (productExists == null)
             {
@@ -87,6 +87,15 @@ namespace Smarket.API.Service.Services
             var returnModel = new ProductReturn();
 
             returnModel = _repositoryProduct.GetProductsBySubCategory(subCategoryId);
+
+            return returnModel;
+        }
+
+        public ProductReturn GetProductsByBrand(Guid brandId)
+        {
+            var returnModel = new ProductReturn();
+
+            returnModel = _repositoryProduct.GetProductsByBrand(brandId);
 
             return returnModel;
         }

@@ -30,7 +30,7 @@ namespace Smarket.API.Service.Services
         {
             var returnModel = new BaseReturn();
 
-            var userExists = _repositoryUser.Get(u => u.UserLogin == newUser.UserLogin);
+            var userExists = _repositoryUser.Get(u => u.UserLogin.ToUpper() == newUser.UserLogin.ToUpper());
 
             if (userExists == null)
             {

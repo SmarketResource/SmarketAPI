@@ -36,7 +36,9 @@ namespace Smarket.API.Service.Services
         {
             var returnModel = new BaseReturn();
 
-            var commerceExists = _repositoryCommerce.Get(m => m.FantasyName == newCommerce.FantasyName);
+            var commerceExists = _repositoryCommerce.Get(m => m.FantasyName.ToUpper()   == newCommerce.FantasyName.ToUpper()
+                                                           || m.SocialName.ToUpper()    == newCommerce.SocialName.ToUpper()
+                                                           || m.CNPJ                    == newCommerce.CNPJ);
 
             if (commerceExists == null)
             {

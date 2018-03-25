@@ -59,7 +59,7 @@ namespace Smarket.API.Service.Services
         {
             var returnModel = new BaseReturn();
 
-            var subCategoryExists = _repositorySubCategory.Get(s => s.Description == newSubCategory.Description);
+            var subCategoryExists = _repositorySubCategory.Get(s => s.Description.ToUpper() == newSubCategory.Description.ToUpper());
 
             if (subCategoryExists == null)
             {

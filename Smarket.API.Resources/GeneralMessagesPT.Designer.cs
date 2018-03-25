@@ -259,6 +259,24 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Erro ao buscar produto(s) pela marca.
+        /// </summary>
+        public static string GetProductByBrandError {
+            get {
+                return ResourceManager.GetString("GetProductByBrandError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Produto(s) recebido com sucesso.
+        /// </summary>
+        public static string GetProductByBrandSuccess {
+            get {
+                return ResourceManager.GetString("GetProductByBrandSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Erro ao buscar produto pela descrição.
         /// </summary>
         public static string GetProductByDescriptionError {
