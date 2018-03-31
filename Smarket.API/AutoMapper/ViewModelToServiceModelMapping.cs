@@ -32,7 +32,7 @@ namespace Smarket.API.AutoMapper
 
             CreateMap<SaveCommerceCommand, Users>()
                 .ForMember(dest => dest.UserLogin,              to => to.MapFrom(src => src.UserLogin))
-                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => src.UserPass));
+                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => EncryptString.Encrypt(src.UserPass)));
 
             CreateMap<SaveCommerceCommand, CommerceEmployee>()
                 .ForMember(dest => dest.Name,                   to => to.MapFrom(src => src.EmployeeName))
@@ -52,7 +52,7 @@ namespace Smarket.API.AutoMapper
 
             CreateMap<SaveMarketCommand, Users>()
                 .ForMember(dest => dest.UserLogin,              to => to.MapFrom(src => src.UserLogin))
-                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => src.UserPass));
+                .ForMember(dest => dest.UserPass,               to => to.MapFrom(src => EncryptString.Encrypt(src.UserPass)));
 
             CreateMap<SaveMarketCommand, MarketEmployee>()
                 .ForMember(dest => dest.Name,                   to => to.MapFrom(src => src.EmployeeName))
