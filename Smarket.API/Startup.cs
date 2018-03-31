@@ -63,7 +63,8 @@ namespace Smarket.API
                     {
                         name = "password",
                         @in = "formData",
-                        type = "string"
+                        type = "string",
+                        format = "password"
                     },
                     new Parameter
                     {

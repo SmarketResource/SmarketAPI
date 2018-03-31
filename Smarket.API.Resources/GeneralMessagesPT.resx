@@ -177,6 +177,36 @@
   <data name="GetGeneratedTokenSuccess" xml:space="preserve">
     <value>Token gerado com sucesso</value>
   </data>
+  <data name="GetLotByDescriptionError" xml:space="preserve">
+    <value>Erro ao buscar lote pela descrição</value>
+  </data>
+  <data name="GetLotByDescriptionSuccess" xml:space="preserve">
+    <value>Lote recebido com sucesso</value>
+  </data>
+  <data name="GetLotByIdError" xml:space="preserve">
+    <value>Erro ao buscar lot por id</value>
+  </data>
+  <data name="GetLotByIdSuccess" xml:space="preserve">
+    <value>Lote recebido com sucesso</value>
+  </data>
+  <data name="GetLotsByMarketError" xml:space="preserve">
+    <value>Erro ao buscar lote(s) por mercado</value>
+  </data>
+  <data name="GetLotsByMarketSuccess" xml:space="preserve">
+    <value>Lote(s) recebido(s) com sucesso</value>
+  </data>
+  <data name="GetLotsByProductError" xml:space="preserve">
+    <value>Erro ao buscar lote(s) por produto</value>
+  </data>
+  <data name="GetLotsByProductSuccess" xml:space="preserve">
+    <value>Lote(s) recebido(s) com sucesso</value>
+  </data>
+  <data name="GetLotsError" xml:space="preserve">
+    <value>Erro ao receber lista de lotes</value>
+  </data>
+  <data name="GetLotsSuccess" xml:space="preserve">
+    <value>Lista de lotes recebida com sucesso</value>
+  </data>
   <data name="GetMarketsError" xml:space="preserve">
     <value>Erro ao receber lista de mercados</value>
   </data>
@@ -287,6 +317,15 @@
   </data>
   <data name="SaveConsumerSuccess" xml:space="preserve">
     <value>Consumidor salvo com sucesso</value>
+  </data>
+  <data name="SaveLotAlreadyExists" xml:space="preserve">
+    <value>Erro, lote já existe na base</value>
+  </data>
+  <data name="SaveLotError" xml:space="preserve">
+    <value>Erro ao salvar lote</value>
+  </data>
+  <data name="SaveLotSuccess" xml:space="preserve">
+    <value>Lote salvo com sucesso</value>
   </data>
   <data name="SaveMarketAlreadyExists" xml:space="preserve">
     <value>Erro, mercado já existe na base</value>

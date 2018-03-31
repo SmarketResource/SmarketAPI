@@ -58,6 +58,7 @@
     <Compile Include="Commands\SaveCityCommand.cs" />
     <Compile Include="Commands\SaveCommerceCommand.cs" />
     <Compile Include="Commands\SaveConsumerCommand.cs" />
+    <Compile Include="Commands\SaveLotCommand.cs" />
     <Compile Include="Commands\SaveMarketCommand.cs" />
     <Compile Include="Commands\SavePhoneCommand.cs" />
     <Compile Include="Commands\SaveProductCommand.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="CommomModels\ConsumerModel.cs" />
     <Compile Include="CommomModels\ConsumersPhonesModel.cs" />
     <Compile Include="CommomModels\EmployeeModel.cs" />
+    <Compile Include="CommomModels\LotModel.cs" />
     <Compile Include="CommomModels\MarketModel.cs" />
     <Compile Include="CommomModels\PhoneModel.cs" />
     <Compile Include="CommomModels\ProductModel.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="EntityConfig\CommerceConfig.cs" />
     <Compile Include="EntityConfig\CommerceEmployeeConfig.cs" />
     <Compile Include="EntityConfig\EmployeeRoleConfig.cs" />
+    <Compile Include="EntityConfig\LotsConfig.cs" />
     <Compile Include="EntityConfig\MarketConfig.cs" />
     <Compile Include="EntityConfig\MarketEmployeeConfig.cs" />
     <Compile Include="EntityConfig\ProductsConfig.cs" />
@@ -102,6 +105,7 @@
     <Compile Include="EntityModel\EmployeeRole.cs" />
     <Compile Include="EntityModel\EntityBase.cs" />
     <Compile Include="EntityModel\Logs.cs" />
+    <Compile Include="EntityModel\Lots.cs" />
     <Compile Include="EntityModel\Market.cs" />
     <Compile Include="EntityModel\MarketEmployee.cs" />
     <Compile Include="EntityModel\Phones.cs" />
@@ -127,6 +131,7 @@
     <Compile Include="Returns\CommerceReturn.cs" />
     <Compile Include="Returns\ConsumerReturn.cs" />
     <Compile Include="Returns\LoginReturn.cs" />
+    <Compile Include="Returns\LotReturn.cs" />
     <Compile Include="Returns\MarketReturn.cs" />
     <Compile Include="Returns\ProductReturn.cs" />
     <Compile Include="Returns\SaveConsumerReturn.cs" />

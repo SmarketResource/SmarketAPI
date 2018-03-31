@@ -241,6 +241,96 @@ namespace Smarket.API.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error fetching lot by description.
+        /// </summary>
+        public static string GetLotByDescriptionError {
+            get {
+                return ResourceManager.GetString("GetLotByDescriptionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot successfully received.
+        /// </summary>
+        public static string GetLotByDescriptionSuccess {
+            get {
+                return ResourceManager.GetString("GetLotByDescriptionSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching lot by id.
+        /// </summary>
+        public static string GetLotByIdError {
+            get {
+                return ResourceManager.GetString("GetLotByIdError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot successfully received.
+        /// </summary>
+        public static string GetLotByIdSuccess {
+            get {
+                return ResourceManager.GetString("GetLotByIdSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching lot by market.
+        /// </summary>
+        public static string GetLotsByMarketError {
+            get {
+                return ResourceManager.GetString("GetLotsByMarketError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successful lot received.
+        /// </summary>
+        public static string GetLotsByMarketSuccess {
+            get {
+                return ResourceManager.GetString("GetLotsByMarketSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error fetching lot by product.
+        /// </summary>
+        public static string GetLotsByProductError {
+            get {
+                return ResourceManager.GetString("GetLotsByProductError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Successful lot received.
+        /// </summary>
+        public static string GetLotsByProductSuccess {
+            get {
+                return ResourceManager.GetString("GetLotsByProductSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error receiving lot list.
+        /// </summary>
+        public static string GetLotsError {
+            get {
+                return ResourceManager.GetString("GetLotsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot list successfully received.
+        /// </summary>
+        public static string GetLotsSuccess {
+            get {
+                return ResourceManager.GetString("GetLotsSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error receiving list of markets.
         /// </summary>
         public static string GetMarketsError {
@@ -570,6 +660,33 @@ namespace Smarket.API.Resources {
         public static string SaveConsumerSuccess {
             get {
                 return ResourceManager.GetString("SaveConsumerSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, lot already exists in base.
+        /// </summary>
+        public static string SaveLotAlreadyExists {
+            get {
+                return ResourceManager.GetString("SaveLotAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error saving lot.
+        /// </summary>
+        public static string SaveLotError {
+            get {
+                return ResourceManager.GetString("SaveLotError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lot saved successfully.
+        /// </summary>
+        public static string SaveLotSuccess {
+            get {
+                return ResourceManager.GetString("SaveLotSuccess", resourceCulture);
             }
         }
         

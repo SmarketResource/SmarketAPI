@@ -68,6 +68,7 @@
     <Compile Include="Services\ServiceLogin.cs" />
     <Compile Include="Services\ServiceLog.cs" />
     <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\ServiceLot.cs" />
     <Compile Include="Services\ServiceMarket.cs" />
     <Compile Include="Services\ServicePhone.cs" />
     <Compile Include="Services\ServiceProduct.cs" />

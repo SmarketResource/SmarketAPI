@@ -41,7 +41,7 @@ namespace Smarket.API.Service.Services
             else
             {
                 returnModel.Error = true;
-                returnModel.Message = GeneralMessagesEN.SaveBrandAlreadyExists;
+                returnModel.Message = GeneralMessagesEN.SaveProductAlreadyExists;
             }
             return returnModel;
         }
@@ -99,5 +99,7 @@ namespace Smarket.API.Service.Services
 
             return returnModel;
         }
+
+
     }
 }

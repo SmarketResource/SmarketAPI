@@ -263,7 +263,8 @@
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\CommerceController.cs" />
     <Compile Include="Controllers\ConsumersController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\BasicTokenController.cs" />
+    <Compile Include="Controllers\LotsController.cs" />
     <Compile Include="Controllers\MarketController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\StateController.cs" />

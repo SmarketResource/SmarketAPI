@@ -14,7 +14,7 @@ namespace Smarket.API.Controllers
     /// <summary>
     /// LoginController Class
     /// </summary>
-    public class LoginController : ApiController
+    public class BasicTokenController : ApiController
     {
         private readonly IServiceLogin _serviceLogin;
         private readonly IServiceLog _serviceLog;
@@ -22,7 +22,7 @@ namespace Smarket.API.Controllers
         /// <summary>
         /// LoginController Constructor
         /// </summary>
-        public LoginController(IServiceLogin serviceLogin, IServiceLog serviceLog)
+        public BasicTokenController(IServiceLogin serviceLogin, IServiceLog serviceLog)
         {
             if (serviceLog == null) throw new ArgumentNullException("serviceLog");
 

@@ -102,6 +102,14 @@ namespace Smarket.API.AutoMapper
                 .ForMember(dest => dest.MarketId,               to => to.MapFrom(src => src.MarketId))
                 .ForMember(dest => dest.SubCategoryId,          to => to.MapFrom(src => src.SubCategoryId))
                 .ForMember(dest => dest.BrandId,                to => to.MapFrom(src => src.BrandId));
+
+            CreateMap<SaveLotCommand, Lots>()
+                .ForMember(dest => dest.Amount,                 to => to.MapFrom(src => src.Amount))
+                .ForMember(dest => dest.ExpirationDate,         to => to.MapFrom(src => src.ExpirationDate))
+                .ForMember(dest => dest.UnitPrice,                  to => to.MapFrom(src => src.UnitPrice))
+                .ForMember(dest => dest.Description,            to => to.MapFrom(src => src.Description))
+                .ForMember(dest => dest.MarketId,               to => to.MapFrom(src => src.MarketId))
+                .ForMember(dest => dest.ProductId,              to => to.MapFrom(src => src.ProductId));
         }
     }
 }

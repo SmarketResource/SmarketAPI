@@ -33,6 +33,7 @@ namespace Smarket.API.Model.Context
         public virtual IDbSet<Categories>               Categories              { get; set; }
         public virtual IDbSet<SubCategories>            SubCategories           { get; set; }
         public virtual IDbSet<Products>                 Products                { get; set; }
+        public virtual IDbSet<Lots>                     Lots                    { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,7 +43,7 @@ namespace Smarket.API.Model.Context
 
             modelBuilder.Properties<string>().Configure(el => el.HasColumnType("varchar"));
             modelBuilder.Properties<string>().Configure(el => el.HasMaxLength(255));
-
+            
             modelBuilder.Configurations.Add(new UsersConfig());
             modelBuilder.Configurations.Add(new TypeUsersConfig());
             modelBuilder.Configurations.Add(new LogsConfig());
@@ -61,6 +62,7 @@ namespace Smarket.API.Model.Context
             modelBuilder.Configurations.Add(new CategoriesConfig());
             modelBuilder.Configurations.Add(new SubCategoriesConfig());
             modelBuilder.Configurations.Add(new ProductsConfig());
+            modelBuilder.Configurations.Add(new LotsConfig());
 
         }
     }

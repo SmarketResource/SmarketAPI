@@ -60,6 +60,7 @@
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumer.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryConsumersPhones.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryLog.cs" />
+    <Compile Include="Interfaces\IRepositories\IRepositoryLot.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryMarket.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryPhone.cs" />
     <Compile Include="Interfaces\IRepositories\IRepositoryProduct.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Interfaces\IServices\IServiceConsumer.cs" />
     <Compile Include="Interfaces\IServices\IServiceLog.cs" />
     <Compile Include="Interfaces\IServices\IServiceLogin.cs" />
+    <Compile Include="Interfaces\IServices\IServiceLot.cs" />
     <Compile Include="Interfaces\IServices\IServiceMarket.cs" />
     <Compile Include="Interfaces\IServices\IServicePhone.cs" />
     <Compile Include="Interfaces\IServices\IServiceProduct.cs" />

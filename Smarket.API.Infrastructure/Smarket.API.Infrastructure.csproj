@@ -64,6 +64,7 @@
     <Compile Include="Repositories\RepositoryConsumer.cs" />
     <Compile Include="Repositories\RepositoryConsumersPhones.cs" />
     <Compile Include="Repositories\RepositoryLog.cs" />
+    <Compile Include="Repositories\RepositoryLot.cs" />
     <Compile Include="Repositories\RepositoryMarket.cs" />
     <Compile Include="Repositories\RepositoryPhone.cs" />
     <Compile Include="Repositories\RepositoryProduct.cs" />

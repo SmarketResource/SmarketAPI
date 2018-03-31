@@ -177,6 +177,36 @@
   <data name="GetGeneratedTokenSuccess" xml:space="preserve">
     <value>Successfully generated Token</value>
   </data>
+  <data name="GetLotByDescriptionError" xml:space="preserve">
+    <value>Error fetching lot by description</value>
+  </data>
+  <data name="GetLotByDescriptionSuccess" xml:space="preserve">
+    <value>Lot successfully received</value>
+  </data>
+  <data name="GetLotByIdError" xml:space="preserve">
+    <value>Error fetching lot by id</value>
+  </data>
+  <data name="GetLotByIdSuccess" xml:space="preserve">
+    <value>Lot successfully received</value>
+  </data>
+  <data name="GetLotsByMarketError" xml:space="preserve">
+    <value>Error fetching lot by market</value>
+  </data>
+  <data name="GetLotsByMarketSuccess" xml:space="preserve">
+    <value>Successful lot received</value>
+  </data>
+  <data name="GetLotsByProductError" xml:space="preserve">
+    <value>Error fetching lot by product</value>
+  </data>
+  <data name="GetLotsByProductSuccess" xml:space="preserve">
+    <value>Successful lot received</value>
+  </data>
+  <data name="GetLotsError" xml:space="preserve">
+    <value>Error receiving lot list</value>
+  </data>
+  <data name="GetLotsSuccess" xml:space="preserve">
+    <value>Lot list successfully received</value>
+  </data>
   <data name="GetMarketsError" xml:space="preserve">
     <value>Error receiving list of markets</value>
   </data>
@@ -287,6 +317,15 @@
   </data>
   <data name="SaveConsumerSuccess" xml:space="preserve">
     <value>Consumer saved successfully</value>
+  </data>
+  <data name="SaveLotAlreadyExists" xml:space="preserve">
+    <value>Error, lot already exists in base</value>
+  </data>
+  <data name="SaveLotError" xml:space="preserve">
+    <value>Error saving lot</value>
+  </data>
+  <data name="SaveLotSuccess" xml:space="preserve">
+    <value>Lot saved successfully</value>
   </data>
   <data name="SaveMarketAlreadyExists" xml:space="preserve">
     <value>Error, market already exists in base</value>
