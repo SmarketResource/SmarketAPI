@@ -1,13 +1,15 @@
-﻿using Smarket.API.Model.EntityModel;
+﻿using Smarket.API.Model.CommomModels;
+using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using System;
+using System.Collections.Generic;
 
 namespace Smarket.API.Domain.Interfaces.IServices
 {
     public interface IServiceLot
     {
 
-        LotReturn GetLots();
+        List<LotModel> GetLots();
 
         LotReturn GetLotById(Guid id);
 

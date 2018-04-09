@@ -1,9 +1,12 @@
-﻿using Smarket.API.Domain.Interfaces.IRepositories;
+﻿using AutoMapper;
+using Smarket.API.Domain.Interfaces.IRepositories;
 using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources;
 using System;
+using System.Collections.Generic;
 using System.Transactions;
 
 namespace Smarket.API.Service.Services
@@ -63,11 +66,11 @@ namespace Smarket.API.Service.Services
             return returnModel;
         }
 
-        public LotReturn GetLots()
+        public List<LotModel> GetLots()
         {
-            var returnModel = new LotReturn();
+            List<LotModel> returnModel;
 
-            returnModel = _repositoryLot.GetLots();
+            returnModel = Mapper.Map<List<Lots>, List<LotModel>>(_repositoryLot.GetLots());
 
             return returnModel;
         }

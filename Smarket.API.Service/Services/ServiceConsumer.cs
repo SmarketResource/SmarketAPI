@@ -69,5 +69,31 @@ namespace Smarket.API.Service.Services
 
         }
 
+        public BaseReturn UpdateConsumer(Consumers newConsumer)
+        {
+            var returnModel = new BaseReturn();
+
+            var consumerExists = _repositoryUser.Get(s => s.UserLogin.ToUpper() == newConsumer.Users.UserLogin.ToUpper());
+
+            if (consumerExists != null)
+            {
+
+                using (var transaction = new TransactionScope())
+                {
+                    _repositoryConsumer.ModifyConsumer(newConsumer);
+                    _repositoryConsumer.SaveChanges();
+
+                    transaction.Complete();
+                }
+                returnModel.Message = GeneralMessagesEN.UpdateConsumerSuccess;
+            }
+            else
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessagesEN.UpdateConsumerDoesNotExist;
+            }
+
+            return returnModel;
+        }
     }
 }

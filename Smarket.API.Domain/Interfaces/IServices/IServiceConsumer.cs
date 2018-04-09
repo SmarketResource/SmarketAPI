@@ -8,5 +8,7 @@ namespace Smarket.API.Domain.Interfaces.IServices
         ConsumerReturn GetConsumers();
 
         BaseReturn SaveConsumer(Consumers newConsumer);
+
+        BaseReturn UpdateConsumer(Consumers newConsumer);
     }
 }

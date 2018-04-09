@@ -8,5 +8,7 @@ namespace Smarket.API.Domain.Interfaces.IRepositories
         Consumers AddConsumer(Consumers consumer);
 
         ConsumerReturn GetConsumers();
+
+        Consumers ModifyConsumer(Consumers consumer);
     }
 }

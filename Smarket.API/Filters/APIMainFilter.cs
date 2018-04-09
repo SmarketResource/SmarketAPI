@@ -1,6 +1,10 @@
 ﻿using Newtonsoft.Json;
+using Smarket.API.Domain.Interfaces.IServices;
+using Smarket.API.Infrastructure.Repositories;
+using Smarket.API.Model.Context;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources.Utils;
+using Smarket.API.Service.Services;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -21,7 +25,7 @@ namespace Smarket.API.Filters
         {
             string token = string.Empty;
             bool notAuthorized = true;
-
+            IServiceLog serviceLog = new ServiceLog(new RepositoryLog(new SmarketContext()));
             try
             {
                 token = actionContext.Request.Headers.Authorization != null ? actionContext.Request.Headers.Authorization.ToString() : string.Empty;
@@ -51,9 +55,9 @@ namespace Smarket.API.Filters
             }
             catch (Exception ex)
             {
-                //ServiceLog.SaveLog(ex.Message);
+                serviceLog.SaveLog(ex.Message);
             }
-            
+
             if (notAuthorized)
             {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.Forbidden));

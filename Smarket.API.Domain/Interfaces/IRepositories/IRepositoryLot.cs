@@ -1,12 +1,13 @@
 ﻿using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using System;
+using System.Collections.Generic;
 
 namespace Smarket.API.Domain.Interfaces.IRepositories
 {
     public interface IRepositoryLot : IRepositoryBase<Lots>
     {
-        LotReturn GetLots();
+        List<Lots> GetLots();
 
         LotReturn GetLotById(Guid id);
 

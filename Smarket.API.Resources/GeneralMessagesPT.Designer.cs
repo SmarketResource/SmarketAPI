@@ -815,5 +815,32 @@ namespace Smarket.API.Resources {
                 return ResourceManager.GetString("SaveUserSuccess", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario não existe na base.
+        /// </summary>
+        public static string UpdateConsumerDoesNotExist {
+            get {
+                return ResourceManager.GetString("UpdateConsumerDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erro ao atualizar usúario.
+        /// </summary>
+        public static string UpdateConsumerError {
+            get {
+                return ResourceManager.GetString("UpdateConsumerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usúario atualizado com sucesso.
+        /// </summary>
+        public static string UpdateConsumerSuccess {
+            get {
+                return ResourceManager.GetString("UpdateConsumerSuccess", resourceCulture);
+            }
+        }
     }
 }

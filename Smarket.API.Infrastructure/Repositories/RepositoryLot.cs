@@ -44,13 +44,11 @@ namespace Smarket.API.Infrastructure.Repositories
             return returnModel;
         }
 
-        public LotReturn GetLots()
+        public List<Lots> GetLots()
         {
             var lots = _context.Lots.ToList();
 
-            var returnModel = new LotReturn { Lots = Mapper.Map<List<Lots>, List<LotModel>>(lots) };
-
-            return returnModel;
+            return lots;
         }
 
         public LotReturn GetLotsByMarket(Guid marketId)

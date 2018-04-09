@@ -369,4 +369,13 @@
   <data name="SaveUserSuccess" xml:space="preserve">
     <value>Usúario salvo com sucesso</value>
   </data>
+  <data name="UpdateConsumerDoesNotExist" xml:space="preserve">
+    <value>Usuario não existe na base</value>
+  </data>
+  <data name="UpdateConsumerError" xml:space="preserve">
+    <value>Erro ao atualizar usúario</value>
+  </data>
+  <data name="UpdateConsumerSuccess" xml:space="preserve">
+    <value>Usúario atualizado com sucesso</value>
+  </data>
 </root>

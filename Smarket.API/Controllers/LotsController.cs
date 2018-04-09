@@ -1,14 +1,20 @@
 ﻿using AutoMapper;
 using Smarket.API.Domain.Interfaces.IServices;
 using Smarket.API.Model.Commands;
+using Smarket.API.Model.CommomModels;
 using Smarket.API.Model.EntityModel;
 using Smarket.API.Model.Returns;
 using Smarket.API.Resources;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.OData;
+using System.Web.Http.OData.Extensions;
+using System.Web.Http.OData.Query;
 using System.Web.Http.Results;
 
 namespace Smarket.API.Controllers
@@ -76,37 +82,32 @@ namespace Smarket.API.Controllers
             return Ok(returnModel);
         }
 
-
         /// <summary>
         /// List all lots in database
         /// </summary>
         /// <remarks>Return a list of lots</remarks>
         [HttpGet]
-        [ResponseType(typeof(LotReturn))]
-        public IHttpActionResult GetLots()
+        [Authorize]
+        public PageResult<LotModel> GetLots(ODataQueryOptions<LotModel> options)
         {
-            var returnModel = new LotReturn();
 
-            try
+            var query = _serviceLot.GetLots().AsQueryable();
+
+            IQueryable Data;
+
+            if(options.Top != null)
             {
-                returnModel = _serviceLot.GetLots();
-                returnModel.Message = GeneralMessagesEN.GetLotsSuccess;
+                Data = options.ApplyTo(query, new ODataQuerySettings() { PageSize = options.Top.Value });
             }
-            catch (Exception ex)
+            else
             {
-                returnModel.Error = true;
-                returnModel.Message = GeneralMessagesEN.GetLotsError + " : " + ex.Message;
-                _serviceLog.SaveLog(returnModel.Message);
-
-                return new ResponseMessageResult(
-                    Request.CreateErrorResponse(
-                        (HttpStatusCode.BadRequest),
-                        new HttpError(returnModel.Message)
-                    )
-                );
+                Data = options.ApplyTo(query);
             }
 
-            return Ok(returnModel);
+            return new PageResult<LotModel>(
+                Data as IEnumerable<LotModel>,
+                Request.ODataProperties().NextLink,
+                Request.ODataProperties().TotalCount);
         }
 
         /// <summary>

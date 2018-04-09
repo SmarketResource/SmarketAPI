@@ -7,6 +7,7 @@ using System.Linq;
 using Smarket.API.Model.CommomModels;
 using AutoMapper;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace Smarket.API.Infrastructure.Repositories
 {
@@ -34,6 +35,13 @@ namespace Smarket.API.Infrastructure.Repositories
             var returnModel = new ConsumerReturn{ Consumers = Mapper.Map<List<Consumers>, List<ConsumerModel>>(consumers) };
 
             return returnModel;
+        }
+
+        public Consumers ModifyConsumer(Consumers consumer)
+        {
+            _context.Entry(consumer).State = EntityState.Modified;
+
+            return consumer;
         }
     }
 }

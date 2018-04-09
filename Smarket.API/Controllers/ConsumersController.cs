@@ -113,5 +113,56 @@ namespace Smarket.API.Controllers
 
             return Ok(returnModel);
         }
+
+        /// <summary>
+        /// Update a consumer
+        /// </summary>
+        /// <param name="command">Consumer data</param>
+        /// <remarks>Return a message if success or failed</remarks>
+        /// 
+        [HttpPut]
+        [ResponseType(typeof(BaseReturn))]
+        public IHttpActionResult UpdateConsumer(SaveConsumerCommand command)
+        {
+            var returnModel = new BaseReturn();
+            try
+            {
+                var phone = Mapper.Map<SaveConsumerCommand, Phones>(command);
+                var user = Mapper.Map<SaveConsumerCommand, Users>(command);
+                var consumer = Mapper.Map<SaveConsumerCommand, Consumers>(command);
+
+                var phones = new List<Phones> { phone };
+
+                consumer.Phones = phones;
+                consumer.Users = user;
+
+                returnModel = _serviceConsumer.SaveConsumer(consumer);
+
+                if (returnModel.Error)
+                {
+                    return new ResponseMessageResult(
+                        Request.CreateErrorResponse(
+                            (HttpStatusCode.BadRequest),
+                            new HttpError(returnModel.Message)
+                        )
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                returnModel.Error = true;
+                returnModel.Message = GeneralMessages.SaveConsumerError + " : " + ex.Message;
+                _serviceLog.SaveLog(returnModel.Message);
+
+                return new ResponseMessageResult(
+                    Request.CreateErrorResponse(
+                        (HttpStatusCode.BadRequest),
+                        new HttpError(returnModel.Message)
+                    )
+                );
+            }
+
+            return Ok(returnModel);
+        }
     }
 }
